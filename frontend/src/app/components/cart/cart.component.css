@@ -1,7 +1,11 @@
 .card-body {
-    background-color: #f3f3f3 !important
+    /* background-color: #f3f3f3 !important */
 }
 
 .prod-title {
     max-width: 50px !important;
+}
+
+.remove-btn{
+    cursor: pointer;
 }
