@@ -7,16 +7,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CartComponent,
-    AccountComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  declarations: [AppComponent, CartComponent, AccountComponent],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
