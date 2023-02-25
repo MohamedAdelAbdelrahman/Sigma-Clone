@@ -1,9 +1,8 @@
 require('dotenv').config();
 require('express-async-errors');
+require('./db/connection');
 const express = require('express');
 const cors = require('cors');
-// DB
-require('./db/connection');
 // security packages
 const helmet = require('helmet');
 const xss = require('xss-clean');
@@ -15,6 +14,7 @@ app.use(express.json());
 app.use(cors());
 app.use(helmet());
 app.use(xss());
+
 // routes
 app.get('/', (req, res) => {
   res.send('Hello, world!');
