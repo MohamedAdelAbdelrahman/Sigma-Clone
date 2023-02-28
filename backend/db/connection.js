@@ -1,23 +1,6 @@
-const mysql = require('mysql');
+const mongoose = require('mongoose');
 
-const connection = mysql.createConnection({
-  host: 'localhost',
-  user: process.env.MYSQL_USER || 'root',
-  password: process.env.MYSQL_PASSWORD || '',
-  database: process.env.MYSQL_DB || 'sigma_clone',
-});
+const connectDB = (url) =>
+  mongoose.connect(url).then(console.log('Connected to DB...'));
 
-connection.connect((err) => {
-  if (err) console.log(err);
-  console.log('Database connected...');
-});
-
-// let sql = 'SELECT 1+1 AS test';
-// connection.query(sql, (err, result) => {
-//   if (err) throw err;
-//   console.log(result);
-// });
-
-// connection.end();
-
-module.exports = connection;
+module.exports = connectDB;
