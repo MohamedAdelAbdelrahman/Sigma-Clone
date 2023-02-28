@@ -1,5 +1,4 @@
 require('dotenv').config();
-// require('./db/connection');
 const express = require('express');
 const cors = require('cors');
 // security packages
@@ -8,6 +7,7 @@ const xss = require('xss-clean');
 
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
+const connectDB = require('./db/connection');
 // const orderRouter = require('./routes/orderRoutes');
 const notFound = require('./middleware/notFound');
 
@@ -32,4 +32,11 @@ app.use(notFound);
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, () => console.log(`Server is running on port ${port}...`));
+const startServer = async () => {
+  try {
+    // await connectDB(process.env.MONGO_URL);
+    app.listen(port, () => console.log(`Server is running on port ${port}...`));
+  } catch (error) {
+    console.log(error);
+  }
+};
