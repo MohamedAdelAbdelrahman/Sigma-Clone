@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-headers-of-pages',
@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class HeadersOfPagesComponent {
 
-}
+  navbarfixed:boolean = false ;
+  @HostListener('window:scroll',['$event']) onscroll() {
+    if(window.scrollY > 100){
+      this.navbarfixed = true ;
+    }else{
+      this.navbarfixed = false ;
+
+    }
+  }
+  
+  }
+
+
+
+
+

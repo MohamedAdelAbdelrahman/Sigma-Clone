@@ -140,3 +140,17 @@
       width: 166px;
     }
   }
+
+ .Mobilenav{
+
+background-color: white;
+z-index: 3;
+ } 
+
+   .fixed{
+    position: fixed;
+    width: 100%;
+    transition: 0.5s linear;
+    top: 0;
+    margin-top: 0%;
+   }

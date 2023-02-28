@@ -8,9 +8,10 @@ import { AccountComponent } from './components/account/account.component';
 import { HeadersOfPagesComponent } from './headers-of-pages/headers-of-pages.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
-  declarations: [AppComponent, CartComponent, AccountComponent, HeadersOfPagesComponent, HomeComponent, FooterComponent],
+  declarations: [AppComponent, CartComponent, AccountComponent, HeadersOfPagesComponent, HomeComponent, FooterComponent, CategoryComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

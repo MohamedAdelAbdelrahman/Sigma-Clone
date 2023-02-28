@@ -1,0 +1,42 @@
+.hrOfFooter {
+    width: 93px;
+    color: rgb(158, 158, 233);
+    border: 1px rgb(116, 116, 207) solid;
+}
+
+.hovereffect img {
+    display: block;
+    -webkit-transition: all .4s linear;
+    transition: all .4s linear;
+}
+
+.hovereffect:hover img {
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.item {
+    display: inline-block;
+    padding-right: 60px;
+}
+
+.item img {
+    height: 150px;
+    width: 290px;
+    transition: .5s;
+}
+
+.HoverBlue {
+    transition: .5s;
+
+}.addCategorybtn{
+    background-color: rgb(105, 186, 197);
+    color: white;
+    height: 39px;
+    font-size: 17px;
+  }
+
+.HoverBlue:hover {
+    color: rgb(158, 158, 233);
+}

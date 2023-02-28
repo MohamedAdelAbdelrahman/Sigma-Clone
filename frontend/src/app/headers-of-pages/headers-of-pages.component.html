@@ -1,8 +1,8 @@
 
-<body>
+<body >
 
     <!-- Hidden NavBar -->
-    <nav class="nav GrayNavBar" style="background-color: rgb(245, 244, 244);">
+    <nav class="nav GrayNavBar " style="background-color: rgb(245, 244, 244);">
         
     <div class="dropdown Account">
         <button class="dropbtn"><i class="fa-solid fa-user"></i></button>
@@ -22,7 +22,7 @@
       </nav>
 
       <!-- Second Navbar(sigma) -->
-      <div class="Second-navbar">
+      <nav class="Second-navbar navbar Mobilenav" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
         <div class="dropdown Account">
             <button class="dropbtn"><i class="bi bi-search"></i></button>
             <div class="dropdown-content">
@@ -52,10 +52,10 @@
                 <a href="#" style="text-decoration: none; color: rgb(158, 158, 233); font-weight: bold;">(00.00LE)</a>
             </div>
         </div>
-      </div>
+    </nav>
 
 <!-- Third Navbar (black one) -->
-      <div class="nav justify-content-center bg-dark p-3 mt-3" >
+      <div class="nav justify-content-center bg-dark p-3 mt-3 " id="nav">
         <div class="dropdown">
             <button class=" bg-dark CategoriesTitle HoverBlue" style="padding-top: 4PX;">CATEGORIES <i class="fa-sharp fa-solid fa-caret-down"></i></button>
             <div class="dropdown-content CategoriesContainer ">
