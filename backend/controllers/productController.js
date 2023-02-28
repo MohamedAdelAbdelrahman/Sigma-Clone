@@ -1,19 +1,19 @@
 const { StatusCodes } = require('http-status-codes');
 
 const getAllProducts = (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'all products' });
+  res.status(200).json({ msg: 'all products' });
 };
 
 const getProduct = (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'update product' });
+  res.status(200).json({ msg: 'update product' });
 };
 
 const updateProduct = (req, res) => {
-  res.status(StatusCodes.OK).json({ msg: 'get product' });
+  res.status(200).json({ msg: 'get product' });
 };
 
 // const createProduct = (req, res) => {
-//   res.status(StatusCodes.CREATED).json({ msg: 'create product' });
+//   res.status(201).json({ msg: 'create product' });
 // };
 
 module.exports = {
