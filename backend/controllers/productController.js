@@ -1,5 +1,3 @@
-const { StatusCodes } = require('http-status-codes');
-
 const getAllProducts = (req, res) => {
   res.status(200).json({ msg: 'all products' });
 };
