@@ -1,0 +1,130 @@
+
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 97%;
+  height: 155px;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.container1:hover .image {
+  opacity: 0.3;
+}
+
+.container1:hover .middle {
+  opacity: 1;
+}
+
+.wrapper{
+  max-height: 120px;
+  border: 1px solid rgb(167, 117, 117);
+  display: flex;
+  overflow: auto;
+}
+.wrapper::-webkit-scrollbar{
+  width: 0;
+}
+.wrapper .item{
+  min-width: 210px;
+  height: 130px;
+  line-height: 10px;
+  text-align: center;
+  background-color: rgb(167, 117, 117);
+  margin-right: 2px;
+}
+.horizontal_slider{
+  display: block;
+  width: 100%;
+  overflow-x: scroll;
+  margin-top: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.horizontal_slider{
+  -ms-overflow-style: none;
+}
+.horizontal_slider::-webkit-scrollbar{
+  display: none;
+
+}
+.slider_container{
+  display: block;
+  white-space: nowrap;
+}
+.item{
+  display: inline-block;
+  padding-right: 60px;
+}
+.item img{
+  height: 150px;
+  width: 290px;
+  transition: .5s;
+}
+.item:hover{
+  color: rgb(158, 158, 233);
+}
+
+.parag{
+  text-align: center;
+  font-weight: bold;
+  padding-top: 7%;
+}
+.buttonsOfScroll{
+display: flex;
+justify-content: space-between;
+position: relative;
+bottom: 219px;
+}
+.btnScroll{
+  border-radius: 50%;
+  width: 53px;
+  background-color: white;
+  font-size: x-large;
+  font-weight:  bold;
+}
+.btnScroll:hover{
+  background-color:  rgb(78, 141, 192);
+}
+
+/* hover image on scroller */
+
+  .hovereffect img {
+  display:block;
+  -webkit-transition:all .4s linear;
+  transition:all .4s linear;
+  }
+  .hovereffect:hover img {
+  -ms-transform:scale(1.2);
+  -webkit-transform:scale(1.2);
+  transform:scale(1.2);
+  }
+  
+  /* Desktop */
+
+ .Addtocart{
+  width: 45%;
+ }
+ .iconsofitem{
+  padding-top: 14px;
+ }
+.addCategorybtn{
+  background-color: rgb(105, 186, 197);
+  color: white;
+  height: 39px;
+  font-size: 17px;
+  margin-right: 3px;
+}
+  

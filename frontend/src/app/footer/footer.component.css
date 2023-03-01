@@ -1,0 +1,18 @@
+.footer{
+    background-color: black;
+  }
+  .textOffooter{
+    text-decoration: none;
+    color: white;
+  }
+  .hrOfFooter{
+    width: 93px;
+    color: rgb(158, 158, 233);
+    border: 1px rgb(116, 116, 207) solid;
+  }
+  .HoverBlue{
+    transition: .5s;
+  }
+  .HoverBlue:hover{
+    color: rgb(158, 158, 233);
+  }
