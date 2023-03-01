@@ -1,5 +1,3 @@
-const { StatusCodes } = require('http-status-codes');
-
 const register = (req, res) => {
   res.status(201).json({ msg: 'user registered' });
 };
