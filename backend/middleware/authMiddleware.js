@@ -12,9 +12,9 @@ const authenticationMiddleware = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    const { userId, name } = decoded;
+    const { userId, name, role } = decoded;
 
-    req.user = { userId, name };
+    req.user = { userId, name, role };
 
     next();
   } catch (error) {
