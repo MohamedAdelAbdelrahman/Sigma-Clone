@@ -5,10 +5,11 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { CategoryComponent } from './category/category.component';
 import { CartComponent } from './components/cart/cart.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  {path:"home",component:HeadersOfPagesComponent},
-  {path:"",component:HeadersOfPagesComponent},
+  {path:"home",component:HomeComponent},
+  {path:"",component:HomeComponent},
   {path:"login",component:LoginComponent},
   {path:"category",component:CategoryComponent},
   {path:"cart",component:CartComponent},
