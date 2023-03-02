@@ -2,17 +2,16 @@ import { Component } from '@angular/core';
 import {FormGroup,FormControl,Validators } from '@angular/forms';
 
 
-
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.css']
 })
-export class LoginComponent {
-
+export class RegistrationComponent {
+ 
     LoginForm= new FormGroup({
     password: new FormControl("",[Validators.required,Validators.pattern(/^[A-Za-z]\w{7,14}$/)]),
+    username: new FormControl("",[Validators.required,Validators.minLength(7),Validators.maxLength(14)]),
     email : new FormControl("",[Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/),Validators.required])
   });
 
@@ -22,7 +21,13 @@ export class LoginComponent {
   get emailTouch(){
     return this.LoginForm.controls['email'].touched;
   }
-get passwordValid(){
+  get usernameValid(){
+    return this.LoginForm.controls['username'].valid;
+  }
+  get usernameTouch(){
+    return this.LoginForm.controls['username'].touched;
+  }
+  get passwordValid(){
     return this.LoginForm.controls['password'].valid;
   }  
   get passwordTouch(){
