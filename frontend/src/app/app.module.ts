@@ -11,9 +11,10 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
-  declarations: [AppComponent, CartComponent, AccountComponent, HeadersOfPagesComponent, HomeComponent, FooterComponent, CategoryComponent, LoginComponent],
+  declarations: [AppComponent, CartComponent, AccountComponent, HeadersOfPagesComponent, HomeComponent, FooterComponent, CategoryComponent, LoginComponent, RegistrationComponent],
   imports: [BrowserModule, 
     AppRoutingModule,
     ReactiveFormsModule,
