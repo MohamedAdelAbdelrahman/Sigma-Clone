@@ -6,22 +6,24 @@ import { ProductsService } from '../services/products.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
-  constructor(public productService: ProductsService) {}
+export class HomeComponent 
+// implements OnInit 
+{
+  // constructor(public productService: ProductsService) {}
 
-  products: any;
-  ngOnInit(): void {
-    console.log(this.productService.GetAllProducts());
+  // products: any;
+  // ngOnInit(): void {
+  //   console.log(this.productService.GetAllProducts());
 
-    this.productService.GetAllProducts().subscribe({
-      next: (data) => {
-        this.products = data;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
+  //   this.productService.GetAllProducts().subscribe({
+  //     next: (data) => {
+  //       this.products = data;
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     },
+  //   });
+  // }
 
   // category
   ClickLeft() {
