@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
 // security packages
@@ -11,6 +12,7 @@ const userRouter = require('./routes/userRoutes');
 const connectDB = require('./db/connection');
 // const orderRouter = require('./routes/orderRoutes');
 const notFound = require('./middleware/notFound');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
@@ -31,6 +33,7 @@ app.use('/api/v1/products', productRouter);
 // app.use('/api/v1/order', orderRouter);
 
 app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 3000;
 
