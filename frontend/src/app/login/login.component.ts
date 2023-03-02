@@ -21,8 +21,14 @@ export class LoginComponent {
   get emailValid(){
     return this.LoginForm.controls['email'].valid;
   }
+  get emailTouch(){
+    return this.LoginForm.controls['email'].touched;
+  }
   get passwordValid(){
     return this.LoginForm.controls['password'].valid;
+  }  
+  get passwordTouch(){
+    return this.LoginForm.controls['password'].touched;
   }
 check(){
   
