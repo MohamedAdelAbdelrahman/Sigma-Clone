@@ -2,7 +2,7 @@
     <form class=" Loginform" [formGroup]="LoginForm">
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label ">Email-Address</label>
-          <input type="text" class="form-control input" >
+          <input type="text" class="form-control input" formControlName="email" >
           <div  class="form-text" *ngIf=" !emailValid; else trueblock"  style="color: red;">
             Email-Address is not matched with pattern
     
@@ -13,15 +13,15 @@
         </div>
         <div class="mb-3">
           <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="text" class="form-control input" >
+          <input type="text" class="form-control input" formControlName="password"  >
           <div  class="form-text" *ngIf="!passwordValid; else trueblock3" style="color: red;">
-            15< Age < 44
+           7< password <14
     
           </div>
           <ng-template #trueblock3>
             <div style="color:rgb(57, 151, 57);">valid</div>
           </ng-template>
         </div>
-        <input type="button" class="btn btn-primary" value="ADD" >
+        <input type="button" class="btn btn-primary" value="ADD" (click)="check()" >
     </form>
 </div>

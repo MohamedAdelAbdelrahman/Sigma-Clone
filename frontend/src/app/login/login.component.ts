@@ -21,5 +21,10 @@ export class LoginComponent {
   get emailValid(){
     return this.LoginForm.controls['email'].valid;
   }
-
+  get passwordValid(){
+    return this.LoginForm.controls['password'].valid;
+  }
+check(){
+  
+}
 }
