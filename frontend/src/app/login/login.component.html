@@ -17,10 +17,8 @@
       <label for="exampleInputPassword1" class="form-label">Username</label>
       <input type="text" class="form-control input" formControlName="username">
       <div *ngIf=" usernameTouch">
-
         <div class="form-text" *ngIf="!usernameValid ; else trueblock2" style="color: red;">
           7< username <14 </div>
-
         </div>
         <ng-template #trueblock2>
           <div style="color:rgb(57, 151, 57);">Valid username</div>
