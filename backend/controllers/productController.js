@@ -1,22 +1,62 @@
-const getAllProducts = (req, res) => {
-  res.status(200).json({ msg: 'all products' });
+const Product = require('../models/productModel')
+
+const getAllProducts = async (req, res) => {
+  try {
+    const products = await Product.find({});
+    res.status(200).json({ products });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+ };
+
+
+const getProduct = async (req, res) => {
+  try {
+    const { id: productID } = req.params;
+    const product = await Product.findOne({ _id: productID });
+
+    if (!product) {
+      return res.status(404).json({ msg: `no product with the id : ${productID}` });
+    }
+
+    res.status(200).json({ product });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
-const getProduct = (req, res) => {
-  res.status(200).json({ msg: 'update product' });
+const createProduct = async (req, res) => {
+  try {
+    const product = await Product.create(req.body);
+    res.status(201).json({ product });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
-const updateProduct = (req, res) => {
-  res.status(200).json({ msg: 'get product' });
+const updateProduct = async (req, res) => {
+  try {
+    const { id: productID } = req.params;
+    const product = await Product.findOneAndUpdate({ _id: productID }, req.body, {
+      new: true,
+      runValidators: true,
+    });
+
+    if (!product) {
+      return res.status(404).json({ msg: `no product with the id : ${productID}` });
+    }
+
+    res.status(200).json({ product });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
 };
 
-// const createProduct = (req, res) => {
-//   res.status(201).json({ msg: 'create product' });
-// };
+
 
 module.exports = {
   getAllProducts,
   getProduct,
   updateProduct,
-  //   createProduct,
+  createProduct,
 };
