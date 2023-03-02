@@ -1,0 +1,33 @@
+<div class="login">
+  <form class=" Loginform" [formGroup]="LoginForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label ">Email-Address</label>
+      <input type="email" class="form-control input" formControlName="email">
+      <div *ngIf=" emailTouch">
+        <div *ngIf=" !emailValid ; else trueblock" class="form-text" style="color: red;">
+          Email-Address is not matched with pattern
+        </div>
+
+      </div>
+      <ng-template #trueblock>
+        <div style="color: rgb(57, 151, 57);">Valid Email-Address</div>
+      </ng-template>
+    </div>
+    
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Password</label>
+      <input type="text" class="form-control input" formControlName="password">
+      <div *ngIf=" passwordTouch">
+
+        <div class="form-text" *ngIf="!passwordValid ; else trueblock3" style="color: red;">
+          7< password <14 </div>
+
+        </div>
+        <ng-template #trueblock3>
+          <div style="color:rgb(57, 151, 57);">Valid Password</div>
+        </ng-template>
+      </div>
+      <p>If you don't have an accout .. <span><a routerLink="/registration">Create an account</a></span></p>
+      <input type="button" class="btn btn-primary" value="Log in" (click)="check()">
+  </form>
+</div>
