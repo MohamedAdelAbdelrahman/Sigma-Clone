@@ -10,13 +10,14 @@ const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
 const userRouter = require('./routes/userRoutes');
 const connectDB = require('./db/connection');
+require('dotenv').config()
 // const orderRouter = require('./routes/orderRoutes');
 const notFound = require('./middleware/notFound');
 const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
-// middlewares
+// middleware
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
