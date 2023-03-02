@@ -13,6 +13,7 @@ const connectDB = require('./db/connection');
 // const orderRouter = require('./routes/orderRoutes');
 const notFound = require('./middleware/notFound');
 const errorHandler = require('./middleware/errorHandler');
+const authMiddleware = require('./middleware/auth');
 
 const app = express();
 
@@ -30,7 +31,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
-// app.use('/api/v1/order', orderRouter);
+// app.use('/api/v1/order', authMiddleware, orderRouter);
 
 app.use(notFound);
 app.use(errorHandler);
