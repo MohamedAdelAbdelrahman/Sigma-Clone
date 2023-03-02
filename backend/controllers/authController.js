@@ -8,13 +8,16 @@ const register = async (req, res) => {
     return res.status(400).json({ msg: 'Email already exists' });
   }
 
-  const user = await User.create(req.body);
+  const user = await User.create({ ...req.body, role: 'user' });
 
   const tokenUser = {
     userId: user._id,
     name: user.name,
+    role: user.role,
   };
+
   const token = user.createJWT();
+
   res.status(201).json({ user: tokenUser, token });
 };
 
