@@ -8,13 +8,12 @@ const xss = require('xss-clean');
 
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
+// const orderRouter = require('./routes/orderRoutes');
 const userRouter = require('./routes/userRoutes');
 const connectDB = require('./db/connection');
-require('dotenv').config()
-// const orderRouter = require('./routes/orderRoutes');
 const notFound = require('./middleware/notFound');
 const errorHandler = require('./middleware/errorHandler');
-const authMiddleware = require('./middleware/auth');
+const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
 
@@ -30,7 +29,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/users', userRouter);
+app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
 // app.use('/api/v1/order', authMiddleware, orderRouter);
 

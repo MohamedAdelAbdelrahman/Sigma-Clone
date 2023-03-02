@@ -4,7 +4,7 @@ const authenticationMiddleware = async (req, res, next) => {
   const authHeader = req.headers.authorization;
 
   if (!authHeader || !authHeader.startsWith('Bearer ')) {
-    res.status(400).json({ msg: 'No token provided' });
+    return res.status(400).json({ msg: 'No token provided' });
   }
 
   const token = authHeader.split(' ')[1];
@@ -12,13 +12,13 @@ const authenticationMiddleware = async (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-    const { userId, email } = decoded;
+    const { userId, name } = decoded;
 
-    req.user = { userId, email };
+    req.user = { userId, name };
 
     next();
   } catch (error) {
-    res.status(400).json({ msg: 'Not authorized to access this route' });
+    return res.status(400).json({ msg: 'Not authorized to access this route' });
   }
 };
 
