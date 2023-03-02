@@ -8,9 +8,7 @@ import {FormGroup,FormControl,Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent {
-  email="";
- password="";
-
+ 
     LoginForm= new FormGroup({
     password: new FormControl("",[Validators.required,Validators.pattern(/^[A-Za-z]\w{7,14}$/)]),
     username: new FormControl("",[Validators.required,Validators.minLength(7),Validators.maxLength(14)]),
