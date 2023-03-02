@@ -1,125 +1,147 @@
-
-<body >
+<body>
 
     <!-- Hidden NavBar -->
     <nav class="nav GrayNavBar " style="background-color: rgb(245, 244, 244);">
-        
-    <div class="dropdown Account">
-        <button class="dropbtn"><i class="fa-solid fa-user"></i></button>
-        <div class="dropdown-content">
-            <a href="#"><i class="fa-solid fa-user-pen" style="padding-right: 5px;"></i>Register</a>
-            <a routerLink="login"><i class="fa-sharp fa-regular fa-file-pen" style="padding-right: 5px;"></i>Login </a>
-        </div>
-    </div>
-        <div style="text-decoration: none; font-size: small; padding: 15px;" class="welcome">Welcome to Our Online Store !</div>
-        <a  href="#" class="HoverBlue Hover"><i style="color:rgb(158, 158, 233);" class="fa-solid fa-arrows-rotate "></i>
-            Compare</a>
-        <a href="#" class="HoverBlue Hover"><i style="color: rgb(158, 158, 233); padding-right: 3px;" class="fa-solid fa-heart"></i>My Wish List</a>
-        <div class="stock" >
-           <div style="padding-right: 6px;">Call us: 33033099</div> 
-           <a style="  font-size: small; font-weight: bold; color: rgb(23, 196, 95);
-           "><i class="fa-regular fa-square-check" style="padding-right:3px; " ></i>Out of stock</a></div>
-      </nav>
 
-      <!-- Second Navbar(sigma) -->
-      <nav class="Second-navbar navbar Mobilenav" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
+        <div class="dropdown Account">
+            <button class="dropbtn"><i class="fa-solid fa-user"></i></button>
+            <div class="dropdown-content">
+                <a href="#"><i class="fa-solid fa-user-pen" style="padding-right: 5px;"></i>Register</a>
+                <a routerLink="login"><i class="fa-sharp fa-regular fa-file-pen" style="padding-right: 5px;"></i>Login
+                </a>
+            </div>
+        </div>
+        <div style="text-decoration: none; font-size: small; padding: 15px;" class="welcome">Welcome to Our Online Store
+            !</div>
+        <a href="#" class="HoverBlue Hover"><i style="color:rgb(158, 158, 233);" class="fa-solid fa-arrows-rotate "></i>
+            Compare</a>
+        <a href="#" class="HoverBlue Hover"><i style="color: rgb(158, 158, 233); padding-right: 3px;"
+                class="fa-solid fa-heart"></i>My Wish List</a>
+        <div class="stock">
+            <div style="padding-right: 6px;">Call us: 33033099</div>
+            <a style="  font-size: small; font-weight: bold; color: rgb(23, 196, 95);
+           "><i class="fa-regular fa-square-check" style="padding-right:3px; "></i>Out of stock</a>
+        </div>
+    </nav>
+
+    <!-- Second Navbar(sigma) -->
+    <nav class="Second-navbar navbar Mobilenav" (scroll)="onscroll()" [ngClass]="navbarfixed?'fixed':'nofixed'">
         <div class="dropdown Account">
             <button class="dropbtn"><i class="bi bi-search"></i></button>
             <div class="dropdown-content">
-                <div class="d-flex" >
-                    <input class="SearchInput" style="width: 273px;" type="search" placeholder="Search.." aria-label="Search">
-                    <a ><i class="bi bi-search" ></i> </a>
+                <div class="d-flex">
+                    <input class="SearchInput" style="width: 273px;" type="search" placeholder="Search.."
+                        aria-label="Search">
+                    <a><i class="bi bi-search"></i> </a>
                 </div>
             </div>
         </div>
-        
-        <img src="assets/images/logo2.png" alt="" >
-        <div class="searchBar" >
+
+        <img src="assets/images/logo2.png" alt="">
+        <div class="searchBar">
             <input class="SearchInput" type="search" placeholder="Search.." aria-label="Search">
-            <button class="SearchButton" type="submit" > Search </button>
+            <button class="SearchButton" type="submit"> Search </button>
         </div>
-          <div  class="Logindiv">
+        <div class="Logindiv">
             <i class="fa-regular fa-user" style="font-size:37px; padding-top: 6px; padding-right: 4px;"></i>
             <div>
                 <div style="color: rgb(192, 192, 192);">My Account</div>
-                <a routerLink="login" style="text-decoration: none; color: black; font-weight: bold;">Login / Register</a>
+                <a routerLink="login" style="text-decoration: none; color: black; font-weight: bold;">Login /
+                    Register</a>
             </div>
         </div>
         <div style="display: flex;">
             <i class="bi bi-lock" style="font-size:27px;  padding-right: 4px;"></i>
             <div>
-                <div >My cart</div>
+                <div>My cart</div>
                 <a href="#" style="text-decoration: none; color: rgb(158, 158, 233); font-weight: bold;">(00.00LE)</a>
             </div>
         </div>
     </nav>
 
-<!-- Third Navbar (black one) -->
-      <div class="nav justify-content-center bg-dark p-3 mt-3 " id="nav">
+    <!-- Third Navbar (black one) -->
+    <div class="nav justify-content-center bg-dark p-3 mt-3 " id="nav">
         <div class="dropdown">
-            <button class=" bg-dark CategoriesTitle HoverBlue" style="padding-top: 4PX;">CATEGORIES <i class="fa-sharp fa-solid fa-caret-down"></i></button>
+            <button class=" bg-dark CategoriesTitle HoverBlue" style="padding-top: 4PX;">CATEGORIES <i
+                    class="fa-sharp fa-solid fa-caret-down"></i></button>
             <div class="dropdown-content CategoriesContainer ">
                 <!-- Categories Menu  -->
-                
-                    <div class="row">
-                        <div class="col-lg-2 col-sm-1">
-                            <a href="#" style="font-weight: bold; background-color:rgb(241, 241, 241)" class="marginTop HoverBlue">DESKTOP</a> 
-                            <hr class="hrCategories marginTop">
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;">Motherboard</a>
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241)">Graphic Card</a>
-                        </div>
-                        <div class="col-lg-2">
-                            <a href="#" class="HoverBlue marginTop" style="font-weight: bold; background-color:rgb(241, 241, 241)">NOTEBOOK</a> 
-                            <hr class="hrCategories">
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;">RAM</a>
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">NOTEBOOK</a>
-                        </div>
-                        <div class="col-lg-2">
-                            <a href="#" class="HoverBlue marginTop" style="font-weight: bold; background-color:rgb(241, 241, 241)">STORAGE</a> 
-                            <hr class="hrCategories">
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;">External Hard </a>
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Internal Hard</a>
-                        </div>
-                        <div class="col-lg-2">
-                            <a href="#" class="HoverBlue marginTop" style="font-weight: bold; background-color:rgb(241, 241, 241)">MONITORS</a> 
-                            <hr class="hrCategories">
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Monitors</a>
-                        </div>
-                        <div class="col-lg-2">
-                            <a href="#" class="HoverBlue marginTop" style="font-weight: bold; background-color:rgb(241, 241, 241)">NETWORK</a> 
-                            <hr class="hrCategories">
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;"> Router </a>
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Switch </a>
-                        </div>
-                        <div class="col-lg-2">
-                            <a href="#" class="HoverBlue marginTop" style="font-weight: bold; background-color:rgb(241, 241, 241)">ACCESSORIES</a> 
-                            <hr class="hrCategories">
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;"> PC Cooling </a>
-                            <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Headphones</a>
-                        </div>
+
+                <div class="row">
+                    <div class="col-lg-2 col-sm-1">
+                        <a href="#" style="font-weight: bold; background-color:rgb(241, 241, 241)"
+                            class="marginTop HoverBlue">DESKTOP</a>
+                        <hr class="hrCategories marginTop">
+                        <a href="" class="marginTop HoverBlue"
+                            style="background-color:rgb(241, 241, 241); margin-bottom: 13px;">Motherboard</a>
+                        <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241)">Graphic
+                            Card</a>
                     </div>
-                
+                    <div class="col-lg-2">
+                        <a href="#" class="HoverBlue marginTop"
+                            style="font-weight: bold; background-color:rgb(241, 241, 241)">NOTEBOOK</a>
+                        <hr class="hrCategories">
+                        <a href="" class="marginTop HoverBlue"
+                            style="background-color:rgb(241, 241, 241); margin-bottom: 13px;">RAM</a>
+                        <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">NOTEBOOK</a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="#" class="HoverBlue marginTop"
+                            style="font-weight: bold; background-color:rgb(241, 241, 241)">STORAGE</a>
+                        <hr class="hrCategories">
+                        <a href="" class="marginTop HoverBlue"
+                            style="background-color:rgb(241, 241, 241); margin-bottom: 13px;">External Hard </a>
+                        <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Internal
+                            Hard</a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="#" class="HoverBlue marginTop"
+                            style="font-weight: bold; background-color:rgb(241, 241, 241)">MONITORS</a>
+                        <hr class="hrCategories">
+                        <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Monitors</a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="#" class="HoverBlue marginTop"
+                            style="font-weight: bold; background-color:rgb(241, 241, 241)">NETWORK</a>
+                        <hr class="hrCategories">
+                        <a href="" class="marginTop HoverBlue"
+                            style="background-color:rgb(241, 241, 241); margin-bottom: 13px;"> Router </a>
+                        <a href="" class="marginTop HoverBlue" style="background-color:rgb(241, 241, 241);">Switch </a>
+                    </div>
+                    <div class="col-lg-2">
+                        <a href="#" class="HoverBlue marginTop"
+                            style="font-weight: bold; background-color:rgb(241, 241, 241)">ACCESSORIES</a>
+                        <hr class="hrCategories">
+                        <a href="" class="marginTop HoverBlue"
+                            style="background-color:rgb(241, 241, 241); margin-bottom: 13px;"> PC Cooling </a>
+                        <a href="" class="marginTop HoverBlue"
+                            style="background-color:rgb(241, 241, 241);">Headphones</a>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="pt-1 ps-5">
-          <a class="bg-dark CategoriesTitle HoverBlue "  routerLink="home">HOME</a>
+            <a class="bg-dark CategoriesTitle HoverBlue " routerLink="home">HOME</a>
         </div>
         <div class="pt-1 ps-5">
-          <a class="bg-dark CategoriesTitle HoverBlue " href="#">ABOUT US</a>
+            <a class="bg-dark CategoriesTitle HoverBlue " href="#">ABOUT US</a>
         </div>
         <div class="pt-1 ps-5">
-          <a class="bg-dark CategoriesTitle HoverBlue " href="#">CONTACT US</a>
+            <a class="bg-dark CategoriesTitle HoverBlue " href="#">CONTACT US</a>
         </div>
         <div class="pt-1 ps-5">
-          <a class="bg-dark CategoriesTitle HoverBlue ">BLOG</a>
+            <a class="bg-dark CategoriesTitle HoverBlue ">BLOG</a>
         </div>
         <div class="pt-1 ps-5">
             <a class="bg-dark CategoriesTitle HoverBlue ">SPECIAL OFFER</a>
-          </div>
-          <div class="dropdown pt-1 ps-5">
-            <button class=" bg-dark CategoriesTitle HoverBlue"  >SELLER <i class="fa-sharp fa-solid fa-caret-down"></i></button>
+        </div>
+        <div class="dropdown pt-1 ps-5">
+            <button class=" bg-dark CategoriesTitle HoverBlue">SELLER <i
+                    class="fa-sharp fa-solid fa-caret-down"></i></button>
             <div class="dropdown-content">
-                <a href="#" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;" class="marginTop HoverBlue">SIGMA</a>
+                <a href="#" style="background-color:rgb(241, 241, 241); margin-bottom: 13px;"
+                    class="marginTop HoverBlue">SIGMA</a>
                 <hr>
                 <a href="#" style="background-color:rgb(241, 241, 241)" class="marginTop HoverBlue">AULO </a>
                 <hr>
@@ -128,15 +150,13 @@
                 <a href="#" style="background-color:rgb(241, 241, 241)" class="marginTop HoverBlue">MSI </a>
                 <hr>
                 <a href="#" style="background-color:rgb(241, 241, 241)" class="marginTop HoverBlue">C-M </a>
-                
+
             </div>
         </div>
-         
-          <div class="pt-1 ps-5">
+
+        <div class="pt-1 ps-5">
             <a class="bg-dark CategoriesTitle HoverBlue ">BUILD YOURBUNDLE</a>
-          </div>
+        </div>
     </div>
 
 </body>
-
-
