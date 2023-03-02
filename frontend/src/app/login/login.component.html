@@ -1,10 +1,10 @@
-<!-- <div class="login">
-    <div class="container">
+<div class="login">
+    <form class=" Loginform" [formGroup]="LoginForm">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Name</label>
-          <input type="text" class="form-control" >
-          <div  class="form-text" *ngIf=" Name.length < 3 && Name; else trueblock"  style="color: red;">
-            Name > 3
+          <label for="exampleInputEmail1" class="form-label ">Email-Address</label>
+          <input type="text" class="form-control input" >
+          <div  class="form-text" *ngIf=" !emailValid; else trueblock"  style="color: red;">
+            Email-Address is not matched with pattern
     
           </div>
           <ng-template #trueblock>
@@ -12,9 +12,9 @@
           </ng-template>
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Age</label>
-          <input type="number" class="form-control" >
-          <div  class="form-text" *ngIf="Age > 44 || Age < 15 && Age; else trueblock3" style="color: red;">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="text" class="form-control input" >
+          <div  class="form-text" *ngIf="!passwordValid; else trueblock3" style="color: red;">
             15< Age < 44
     
           </div>
@@ -23,6 +23,5 @@
           </ng-template>
         </div>
         <input type="button" class="btn btn-primary" value="ADD" >
-    </div>
+    </form>
 </div>
- -->

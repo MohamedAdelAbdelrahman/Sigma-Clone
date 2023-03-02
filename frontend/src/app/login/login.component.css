@@ -1,3 +1,17 @@
+
 .login{
-    height: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Loginform{
+    padding: 5%;
+    
+}
+.input{
+width: 600px;
+}
+label{
+    font-weight: bold;
 }

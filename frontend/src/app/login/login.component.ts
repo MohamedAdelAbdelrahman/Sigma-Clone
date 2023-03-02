@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FormGroup,FormControl,Validators } from '@angular/forms';
+
 
 
 
@@ -8,9 +10,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  Name="";
-  Age=0;
+  email="";
+ password="";
 
+    LoginForm= new FormGroup({
+    password: new FormControl("",[Validators.required,Validators.pattern(/^[A-Za-z]\w{7,14}$/)]),
+    email : new FormControl("",[Validators.pattern(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/),Validators.required])
+  });
 
+  get emailValid(){
+    return this.LoginForm.controls['email'].valid;
+  }
 
 }
