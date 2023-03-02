@@ -4,12 +4,14 @@ import { HeadersOfPagesComponent } from './headers-of-pages/headers-of-pages.com
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { CategoryComponent } from './category/category.component';
+import { CartComponent } from './components/cart/cart.component';
 
 const routes: Routes = [
   {path:"home",component:HeadersOfPagesComponent},
   {path:"",component:HeadersOfPagesComponent},
   {path:"login",component:LoginComponent},
   {path:"category",component:CategoryComponent},
+  {path:"cart",component:CartComponent},
 ];
 
 @NgModule({
