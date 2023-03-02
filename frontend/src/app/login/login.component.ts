@@ -22,13 +22,7 @@ export class LoginComponent {
   get emailTouch(){
     return this.LoginForm.controls['email'].touched;
   }
-  get usernameValid(){
-    return this.LoginForm.controls['username'].valid;
-  }
-  get usernameTouch(){
-    return this.LoginForm.controls['username'].touched;
-  }
-  get passwordValid(){
+get passwordValid(){
     return this.LoginForm.controls['password'].valid;
   }  
   get passwordTouch(){
