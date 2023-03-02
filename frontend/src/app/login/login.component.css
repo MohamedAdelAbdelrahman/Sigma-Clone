@@ -6,12 +6,16 @@
     align-items: center;
 }
 .Loginform{
-    padding: 5%;
+    /* padding: 5%; */
     
 }
 .input{
-width: 600px;
+width: 300px;
+
 }
 label{
     font-weight: bold;
+}
+.btn{
+   margin-left: 33%;
 }
