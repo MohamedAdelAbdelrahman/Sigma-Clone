@@ -12,6 +12,7 @@ const orderRouter = require('./routes/orderRoutes');
 const userRouter = require('./routes/userRoutes');
 const notFound = require('./middleware/notFound');
 const connectDB = require('./db/connection');
+const notFound = require('./middleware/notFound');
 
 const errorHandler = require('./middleware/errorHandler');
 const authMiddleware = require('./middleware/authMiddleware');
@@ -37,7 +38,7 @@ app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/order', orderRouter);
 
-
+app.use(notFound);
 app.use(notFound);
 app.use(errorHandler);
 
