@@ -9,6 +9,7 @@ import { ProductsService } from '../../services/products.service';
 })
 export class HomeComponent implements OnInit {
   products: any;
+  categories: any;
   constructor(
     public productService: ProductsService,
     public cartService: CartService
@@ -28,6 +29,17 @@ export class HomeComponent implements OnInit {
         console.log(err);
       },
     });
+
+    // this.productService.GetCategories().subscribe({
+    //   next: (value) => {
+    //     this.categories = value;
+    //     console.log('this is data' + value);
+    //   },
+
+    //   // error(err) {
+    //   //   console.log(err);
+    //   // },
+    // });
   }
 
   AddToCart(id: any) {
