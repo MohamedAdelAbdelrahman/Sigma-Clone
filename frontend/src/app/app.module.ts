@@ -15,6 +15,8 @@ import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

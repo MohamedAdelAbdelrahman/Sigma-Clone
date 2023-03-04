@@ -8,19 +8,24 @@ const xss = require('xss-clean');
 
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
-const userRouter = require('./routes/userRoutes');
-const connectDB = require('./db/connection');
 const orderRouter = require('./routes/orderRoutes');
+const userRouter = require('./routes/userRoutes');
 const notFound = require('./middleware/notFound');
+const connectDB = require('./db/connection');
+
 const errorHandler = require('./middleware/errorHandler');
+const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
+const fileUpload = require('express-fileupload');
 
-// middlewares
+// middleware
+app.use(express.static('./public'));
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
 app.use(xss());
+app.use(fileUpload());
 
 // routes
 app.get('/', (req, res) => {
@@ -28,10 +33,10 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/users', userRouter);
+app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/order', orderRouter);
-// app.use('/api/v1/order', orderRouter);
+
 
 app.use(notFound);
 app.use(errorHandler);
