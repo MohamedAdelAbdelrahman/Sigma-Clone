@@ -13,6 +13,7 @@ import { CategoryComponent } from './category/category.component';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 
 
 
@@ -27,6 +28,7 @@ import { RegistrationComponent } from './registration/registration.component';
     CategoryComponent,
     LoginComponent,
     RegistrationComponent,
+    ProductDetailsComponent,
   ],
   imports: [
     BrowserModule,
