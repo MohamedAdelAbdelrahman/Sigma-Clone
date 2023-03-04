@@ -10,7 +10,7 @@ import { HeadersOfPagesComponent } from './components/headers-of-pages/headers-o
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './components/category/category.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
