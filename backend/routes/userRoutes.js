@@ -10,8 +10,8 @@ const {
   updateUser,
   deleteUser,
   addProductToCart,
-  AllProductInCart,
-  deleteCart,
+  getAllProductInCart,
+  deleteProductFromCart,
 } = require('../controllers/userController');
 
 router
@@ -23,9 +23,9 @@ router.route('/showMe').get(showCurrentUser);
 
 router
   .route('/cart')
-  .get(AllProductInCart)
+  .get(getAllProductInCart)
   .post(addProductToCart)
-  .delete(deleteCart);
+  .delete(deleteProductFromCart);
 router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 module.exports = router;

@@ -86,7 +86,7 @@ const addProductToCart = async (req, res) => {
 };
 
 //*get all products in cart
-const AllProductInCart = async (req, res) => {
+const getAllProductInCart = async (req, res) => {
   try {
     const carts = await User.find({ _id: req.user.userId }).select('cart');
     let productItems = [];
@@ -94,7 +94,6 @@ const AllProductInCart = async (req, res) => {
 
     for (const product of carts) {
       const dbProduct = await Product.findById({ _id: product.cart });
-      // console.log(carts);
       if (!dbProduct) {
         return res.status(404).json({ msg: 'product not found' });
       }
@@ -108,8 +107,7 @@ const AllProductInCart = async (req, res) => {
   }
 };
 
-//*delete cart
-const deleteCart = async (req, res) => {
+const deleteProductFromCart = async (req, res) => {
   try {
     const removeProduct = await User.updateOne(
       { _id: req.user.userId },
@@ -129,6 +127,6 @@ module.exports = {
   updateUser,
   deleteUser,
   addProductToCart,
-  AllProductInCart,
-  deleteCart,
+  getAllProductInCart,
+  deleteProductFromCart,
 };
