@@ -1,4 +1,5 @@
 const User = require('../models/userModel');
+const Product = require('../models/productModel');
 
 const getAllUsers = async (req, res) => {
   try {
@@ -66,10 +67,72 @@ const deleteUser = async (req, res) => {
   }
 };
 
+  //*create cart
+const addProductToCart = async (req, res) => {
+  try {
+    console.log(req.user.userId,req.body)
+    const product = await User.updateOne({_id: req.user.userId},{$push: {cart: req.body.productId}});
+    res.status(201).json({ product});
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
+  //*get all products in cart
+const AllProductInCart = async (req, res) => {
+  try {
+    const carts = await User.find({_id: req.user.userId}).select('cart');
+    let productItems = [];
+    let total = 0;
+    
+    for (const product of carts){
+      const dbProduct = await Product.findById({_id: product.cart}); 
+      console.log(carts);
+      if (!dbProduct) {
+        return res.status(404).json({msg:'product not found'})
+      }
+      productItems.push(dbProduct);
+      total += dbProduct.price;
+    }
+
+    res.status(200).json({ total,productItems });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
+
+
+
+ //*update cart
+const updateCart = async (req, res) => {
+  try {
+    const addProductToCart = await User.updateOne({_id: req.user.userId},{$push: {cart: req.body.productId}});
+    res.status(201).json({ addProductToCart });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
+  //*delete cart
+  const deleteCart = async (req, res) => {
+    try {
+      const removeProduct = await User.updateOne({_id: req.user.userId},{$pull: {cart: req.body.productId}});
+      res.status(201).json({ removeProduct });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  };
+
+
 module.exports = {
   getAllUsers,
   getUser,
   createUser,
   updateUser,
   deleteUser,
+  addProductToCart,
+  AllProductInCart,
+  deleteCart,
+  updateCart
 };
