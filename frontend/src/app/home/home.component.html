@@ -2,42 +2,18 @@
 
     <!-- ****************************Carousel****************************** -->
     <div class="row pt-2">
-        <div id="carouselExampleIndicators" class="carousel slide col-lg-7" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
-                    aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                    aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                    aria-label="Slide 3"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                    aria-label="Slide 4"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="assets/images/Carousel1.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/Carousel2.PNG" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/Carousel3.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/Carousel4.jpg" class="d-block w-100" alt="...">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
-                data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
+     
+      <div class="Slider col-lg-7">
+      <div id="slider">
+        <figure>
+              <img src="assets/images/Carousel2.PNG">
+              <img src="assets/images/Carousel3.jpg">
+              <img src="assets/images/Carousel4.jpg">
+        </figure>
+  </div>
+</div>
+   
+        
         <div class=" col-lg-5 Pics4">
             <div class="row">
                 <div class=" col-lg-6">
@@ -72,40 +48,65 @@
         <hr>
         <div class="horizontal_slider" id="container">
             <div class="slider_container">
-                <div class="item">
-                    <img src="assets/images/desktop.jpeg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage  text-white">
+                        <img src="assets/images/desktop.jpeg" alt="" class="card-img">
+                    </div>
                     <p class="parag">DESKTOP</p>
+
                 </div>
-                <div class="item">
-                    <img src="assets/images/network.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+                        <img src="assets/images/network.jpg" alt="">
+                    </div>
                     <p class="parag">NETWORK</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/notebook.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+                        <img src="assets/images/notebook.jpg" alt="">
+                    </div>
                     <p class="parag">NOTEBOOK</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/storage.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+
+                        <img src="assets/images/storage.jpg" alt="">
+                    </div>
                     <p class="parag">STORAGE</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/tv.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+
+                        <img src="assets/images/tv.jpg" alt="">
+                    </div>
                     <p class="parag">TV</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/software.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+
+                        <img src="assets/images/software.jpg" alt="">
+                    </div>
                     <p class="parag">SOFTWARE</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/Bundles.jfif" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+
+                        <img src="assets/images/Bundles.jfif" alt="">
+                    </div>
                     <p class="parag">BUNDLES</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/Access.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+
+                        <img src="assets/images/Access.jpg" alt="">
+                    </div>
                     <p class="parag">ACCESSORIES</p>
                 </div>
-                <div class="item">
-                    <img src="assets/images/tools.jpg" alt="">
+                <div class="item hovereffect">
+                    <div class="itemImage text-white">
+
+                        <img src="assets/images/tools.jpg" alt="">
+                    </div>
                     <p class="parag">TOOLS</p>
                 </div>
             </div>
@@ -238,7 +239,8 @@
     <div class="buttonsOfScroll">
         <button type="button" class="btn btnScroll sliderleft" id="sliderleft1" (click)="ClickLeft1()">
             < </button>
-                <button type="button" class="btn btnScroll sliderleft" id="slideright1" (click)="ClickRight1()"> > </button>
+                <button type="button" class="btn btnScroll sliderleft" id="slideright1" (click)="ClickRight1()"> >
+                </button>
     </div>
 
 
@@ -361,7 +363,8 @@
     <div class="buttonsOfScroll">
         <button type="button" class="btn btnScroll sliderleft" id="sliderleft2" (click)="ClickLeft2()">
             < </button>
-                <button type="button" class="btn btnScroll sliderleft" id="slideright2" (click)="ClickRight2()"> > </button>
+                <button type="button" class="btn btnScroll sliderleft" id="slideright2" (click)="ClickRight2()"> >
+                </button>
     </div>
 
     <!-- ***************Container of images************ -->
@@ -494,9 +497,10 @@
 
     </div>
     <div class="buttonsOfScroll">
-        <button type="button" class="btn btnScroll sliderleft" id="sliderleft3"(click)="ClickLeft3()">
+        <button type="button" class="btn btnScroll sliderleft" id="sliderleft3" (click)="ClickLeft3()">
             < </button>
-                <button type="button" class="btn btnScroll sliderleft" id="slideright3"(click)="ClickRight3()"> > </button>
+                <button type="button" class="btn btnScroll sliderleft" id="slideright3" (click)="ClickRight3()"> >
+                </button>
     </div>
 
 
@@ -615,8 +619,8 @@
 
     </div>
     <div class="buttonsOfScroll">
-        <button type="button" class="btn btnScroll sliderleft" id="sliderleft4"(click)="ClickLeft4()">
+        <button type="button" class="btn btnScroll sliderleft" id="sliderleft4" (click)="ClickLeft4()">
             < </button>
-                <button type="button" class="btn btnScroll sliderleft" id="slideright4"(click)="ClickRight4()"> > </button>
+                <button type="button" class="btn btnScroll sliderleft" id="slideright4" (click)="ClickRight4()"> >
+                </button>
     </div>
-</div>

@@ -1,59 +1,43 @@
 const mongoose = require('mongoose');
 
 const ProductSchema = new mongoose.Schema({
-  product_name: {
+  name: {
     type: String,
     trim: true,
     required: [true, 'Please provide product name'],
     maxLength: [100, 'Name can not be more than 100 characters'],
     timestamps: true,
   },
-  
+
   price: {
     type: Number,
     required: [true, 'Please provide product price'],
-    default: 0,
   },
-  
+
   description: {
     type: String,
-    required: [true, 'Please provide product description'],
     maxLength: [1000, 'Description can not be more than 1000 characters'],
   },
-  
+
   image: {
     type: String,
     required:true,
   },
-  
+
   category: {
     type: String,
     required: [true, 'Please provide product category'],
-    enum: [],
   },
-  
-  quantity:{type: Number},
-  
-  seller:{type: String,
-          trim: true
-    },
 
-  price:{type: Number},
+  quantity: { type: Number, min: 0 },
 
-  brand:{enum:[]},
+  seller: { type: String, trim: true },
 
-  model:{type: String,
-         trim: true
-    },
+  brand: { type: String },
 
-  quantity:{type: Number},
+  model: { type: String, trim: true },
 
-  seller:{type: String,
-          trim: true
-        },
-})
-
+  seller: { type: String, trim: true, enum: ['Sigma'] },
+});
 
 module.exports = mongoose.model('Product', ProductSchema);
-
-

@@ -5,11 +5,21 @@ const {
   createProduct,
   getProduct,
   updateProduct,
-}  = require('../controllers/productController');
+  deleteProduct,
+} = require('../controllers/productController');
 const {uploadProductImage} = require('../controllers/UploadsController');
+const checkAdminMiddleware = require('../middleware/checkAdminMiddleware');
+const authMiddleware = require('../middleware/authMiddleware');
 
-router.route('/').get(getAllProducts).post(createProduct);;
-router.route('/:id').get(getProduct).patch(updateProduct);
+router
+  .route('/')
+  .get(getAllProducts)
+  .post(authMiddleware, checkAdminMiddleware, createProduct);
+router
+  .route('/:id')
+  .get(getProduct)
+  .patch(updateProduct)
+  .delete(authMiddleware, checkAdminMiddleware, deleteProduct);
 router.route('/uploads').post(uploadProductImage);
 
 module.exports = router;

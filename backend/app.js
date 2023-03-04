@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
 // security packages
@@ -7,12 +8,13 @@ const xss = require('xss-clean');
 
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
+// const orderRouter = require('./routes/orderRoutes');
 const userRouter = require('./routes/userRoutes');
 const connectDB = require('./db/connection');
-require('dotenv').config()
-// const orderRouter = require('./routes/orderRoutes');
 // const notFound = require('./middleware/notFound');
 
+const errorHandler = require('./middleware/errorHandler');
+const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
 const fileUpload = require('express-fileupload');
@@ -31,11 +33,12 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/users', userRouter);
+app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
-// app.use('/api/v1/order', orderRouter);
+// app.use('/api/v1/order', authMiddleware, orderRouter);
 
 // app.use(notFound);
+app.use(errorHandler);
 
 const port = process.env.PORT || 3000;
 
