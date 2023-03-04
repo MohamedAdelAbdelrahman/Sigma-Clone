@@ -25,7 +25,6 @@ const getAllProducts = async (req, res) => {
   try {
     const products = await result;
 
-    // const products = await Product.find({});
     res.status(200).json({ count: products.length, products });
   } catch (error) {
     res.status(500).json({ msg: error });
@@ -99,10 +98,20 @@ const deleteProduct = async (req, res) => {
   }
 };
 
+const getAllCategories = async (req, res) => {
+  try {
+    const products = await Product.find({}).select('name');
+    res.status(200).json({ products });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
 module.exports = {
   getAllProducts,
   getProduct,
   updateProduct,
   createProduct,
   deleteProduct,
+  getAllCategories,
 };
