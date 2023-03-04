@@ -100,7 +100,7 @@ const deleteProduct = async (req, res) => {
 
 const getAllCategories = async (req, res) => {
   try {
-    const products = await Product.find({}).select('category');
+    const products = await Product.find({}).select('category').distinct('category');
     res.status(200).json({ products });
   } catch (error) {
     res.status(500).json({ msg: error });
