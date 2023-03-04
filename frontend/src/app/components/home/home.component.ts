@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { ProductsService } from '../../services/products.service';
 })
 export class HomeComponent implements OnInit {
   products: any;
-  constructor(public productService: ProductsService) {}
+  constructor(
+    public productService: ProductsService,
+    public cartService: CartService
+  ) {}
   ngOnInit(): void {
     this.productService.GetAllProducts().subscribe({
       next: (data) => {
@@ -16,22 +20,28 @@ export class HomeComponent implements OnInit {
         console.log(data);
         // if (this.products.products[0].category == 'Desktop') {
         //   console.log('done');
-          
+
         // }
       },
-      
+
       error: (err) => {
         console.log(err);
       },
     });
-
-    // this.productService.GetCategories().subscribe({
-    //   next(value) {
-    //     console.log(value);
-        
-    //   },
-    // })
   }
+
+  AddToCart(id: any) {
+    this.cartService.AddToCart(id).subscribe({
+      next(value) {
+        console.log('added to cart item' + value);
+      },
+
+      error(err) {
+        console.log(err);
+      },
+    });
+  }
+
   // category
   ClickLeft() {
     var container = document.getElementById('container');

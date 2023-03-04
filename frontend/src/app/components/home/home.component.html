@@ -50,7 +50,7 @@
             <div class="slider_container">
                 <div class="item hovereffect" *ngIf="products">
                     <a routerLink="/home/{{products.products[0]._id}}" class="itemImage  text-white">
-                        <img src="assets/products_images/productImage.jpg" alt="" class="card-img">
+                        <img src="assets/{{products.products[0].image}}" alt="" class="card-img">
                     </a>
                     <p class="parag">{{products.products[0].name }}</p>
                     <p class="parag"></p>
@@ -139,7 +139,8 @@
                         </div>
                     </div>
                     <div class="iconsofitem ps-3">
-                        <button class="Addtocart btn HoverBlue addCategorybtn">Add to cart</button>
+                        <button class="Addtocart btn HoverBlue addCategorybtn"
+                            (click)="AddToCart(products.products[22]._id)">Add to cart</button>
                         <button class="btn HoverBlue addCategorybtn"><i class="bi bi-heart "></i></button>
                         <button class="btn HoverBlue addCategorybtn"><i class="fa-solid fa-arrows-rotate "></i></button>
                         <button class="btn HoverBlue addCategorybtn"><i class="bi bi-cart "></i></button>
