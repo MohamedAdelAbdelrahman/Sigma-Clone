@@ -6,8 +6,10 @@ const {
   getProduct,
   updateProduct,
 }  = require('../controllers/productController');
+const {uploadProductImage} = require('../controllers/UploadsController');
 
 router.route('/').get(getAllProducts).post(createProduct);;
 router.route('/:id').get(getProduct).patch(updateProduct);
+router.route('/uploads').post(uploadProductImage);
 
 module.exports = router;

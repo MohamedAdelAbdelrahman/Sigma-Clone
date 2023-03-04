@@ -11,15 +11,19 @@ const userRouter = require('./routes/userRoutes');
 const connectDB = require('./db/connection');
 require('dotenv').config()
 // const orderRouter = require('./routes/orderRoutes');
-const notFound = require('./middleware/notFound');
+// const notFound = require('./middleware/notFound');
+
 
 const app = express();
+const fileUpload = require('express-fileupload');
 
 // middleware
+app.use(express.static('./public'));
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
 app.use(xss());
+app.use(fileUpload());
 
 // routes
 app.get('/', (req, res) => {
@@ -31,7 +35,7 @@ app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 // app.use('/api/v1/order', orderRouter);
 
-app.use(notFound);
+// app.use(notFound);
 
 const port = process.env.PORT || 3000;
 

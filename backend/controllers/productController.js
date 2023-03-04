@@ -1,4 +1,5 @@
 const Product = require('../models/productModel')
+// const {statusCodes} = require('http-status-codes');
 
 const getAllProducts = async (req, res) => {
   try {
