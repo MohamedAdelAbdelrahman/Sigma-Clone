@@ -2,6 +2,7 @@ require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 // security packages
 const helmet = require('helmet');
 const xss = require('xss-clean');
