@@ -48,12 +48,12 @@
         <hr>
         <div class="horizontal_slider" id="container">
             <div class="slider_container">
-                <div class="item hovereffect">
+                <div class="item hovereffect" *ngIf="products">
                     <div class="itemImage  text-white">
                         <img src="assets/images/desktop.jpeg" alt="" class="card-img">
                     </div>
                     <!-- <p class="parag">DESKTOP</p> -->
-                    <p class="parag">{{products[0].product.name }}</p>
+                    <p class="parag">{{products.products[0].product_name }}</p>
 
                 </div>
                 <div class="item hovereffect">

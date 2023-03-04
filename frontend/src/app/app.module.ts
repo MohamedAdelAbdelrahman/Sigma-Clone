@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { SearchComponent } from './search/search.component';
 
 
 
@@ -29,6 +30,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     LoginComponent,
     RegistrationComponent,
     ProductDetailsComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
