@@ -48,9 +48,9 @@
         <hr>
         <div class="horizontal_slider" id="container">
             <div class="slider_container">
-                <div class="item hovereffect">
+                <div class="item hovereffect" *ngIf="products">
                     <div class="itemImage  text-white">
-                        <img src="assets/images/desktop.jpeg" alt="" class="card-img">
+                        <img src="assets/products_images/productImage.jpg" alt="" class="card-img">
                     </div>
                     <p class="parag">{{products.products[0].name }}</p>
 
@@ -69,21 +69,18 @@
                 </div>
                 <div class="item hovereffect">
                     <div class="itemImage text-white">
-
                         <img src="assets/images/storage.jpg" alt="">
                     </div>
                     <p class="parag">STORAGE</p>
                 </div>
                 <div class="item hovereffect">
                     <div class="itemImage text-white">
-
                         <img src="assets/images/tv.jpg" alt="">
                     </div>
                     <p class="parag">TV</p>
                 </div>
                 <div class="item hovereffect">
                     <div class="itemImage text-white">
-
                         <img src="assets/images/software.jpg" alt="">
                     </div>
                     <p class="parag">SOFTWARE</p>

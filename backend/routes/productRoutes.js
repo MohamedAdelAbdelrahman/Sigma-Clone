@@ -6,8 +6,9 @@ const {
   getProduct,
   updateProduct,
   deleteProduct,
+  getAllCategories,
 } = require('../controllers/productController');
-const {uploadProductImage} = require('../controllers/UploadsController');
+const { uploadProductImage } = require('../controllers/UploadsController');
 const checkAdminMiddleware = require('../middleware/checkAdminMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 
@@ -15,6 +16,9 @@ router
   .route('/')
   .get(getAllProducts)
   .post(authMiddleware, checkAdminMiddleware, createProduct);
+
+router.route('/categories').get(getAllCategories);
+
 router
   .route('/:id')
   .get(getProduct)

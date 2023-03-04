@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../services/products.service';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-home',
@@ -70,9 +70,9 @@ ClickRight4() {
   var container = document.getElementById('container4');
   sideScroll(container, 'right', 25, 270, 10);
 }
-
-
 }
+
+
 
 function sideScroll(
   element: any,
