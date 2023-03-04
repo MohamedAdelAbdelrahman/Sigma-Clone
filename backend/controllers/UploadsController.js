@@ -1,7 +1,7 @@
-const path = require('path')
+const path = require('path');
 
 const uploadProductImage = async (req, res) => {
-    const productImage = req.files.image;
+  const productImage = req.files.image;
 
   const imagePath = path.join(__dirname,'../../frontend/src/assets/products_images/'+`productImage.name`);
      await productImage.mv(imagePath);
@@ -11,4 +11,4 @@ const uploadProductImage = async (req, res) => {
 
 module.exports = {
   uploadProductImage,
-}
+};

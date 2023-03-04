@@ -2,18 +2,18 @@
 
     <!-- ****************************Carousel****************************** -->
     <div class="row pt-2">
-     
-      <div class="Slider col-lg-7">
-      <div id="slider">
-        <figure>
-              <img src="assets/images/Carousel2.PNG">
-              <img src="assets/images/Carousel3.jpg">
-              <img src="assets/images/Carousel4.jpg">
-        </figure>
-  </div>
-</div>
-   
-        
+
+        <div class="Slider col-lg-7">
+            <div id="slider">
+                <figure>
+                    <img src="assets/images/Carousel2.PNG">
+                    <img src="assets/images/Carousel3.jpg">
+                    <img src="assets/images/Carousel4.jpg">
+                </figure>
+            </div>
+        </div>
+
+
         <div class=" col-lg-5 Pics4">
             <div class="row">
                 <div class=" col-lg-6">
@@ -48,11 +48,12 @@
         <hr>
         <div class="horizontal_slider" id="container">
             <div class="slider_container">
-                <div class="item hovereffect">
+                <div class="item hovereffect" *ngIf="products">
                     <div class="itemImage  text-white">
                         <img src="assets/images/desktop.jpeg" alt="" class="card-img">
                     </div>
-                    <p class="parag">DESKTOP</p>
+                    <!-- <p class="parag">DESKTOP</p> -->
+                    <p class="parag">{{products.products[0].product_name }}</p>
 
                 </div>
                 <div class="item hovereffect">
@@ -69,21 +70,18 @@
                 </div>
                 <div class="item hovereffect">
                     <div class="itemImage text-white">
-
                         <img src="assets/images/storage.jpg" alt="">
                     </div>
                     <p class="parag">STORAGE</p>
                 </div>
                 <div class="item hovereffect">
                     <div class="itemImage text-white">
-
                         <img src="assets/images/tv.jpg" alt="">
                     </div>
                     <p class="parag">TV</p>
                 </div>
                 <div class="item hovereffect">
                     <div class="itemImage text-white">
-
                         <img src="assets/images/software.jpg" alt="">
                     </div>
                     <p class="parag">SOFTWARE</p>
