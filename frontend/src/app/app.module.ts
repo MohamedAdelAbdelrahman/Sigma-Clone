@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

@@ -1,27 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductsService } from '../services/products.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit {
-  constructor(public productService: ProductsService) {}
+export class HomeComponent 
+// implements OnInit 
+{  title = 'ng-carousel-demo';
 
-  products: any;
-  ngOnInit(): void {
-    console.log(this.productService.GetAllProducts());
 
-    this.productService.GetAllProducts().subscribe({
-      next: (data) => {
-        this.products = data;
-      },
-      error: (err) => {
-        console.log(err);
-      },
-    });
-  }
+  // constructor(public productService: ProductsService) {}
+
+  // products: any;
+  // ngOnInit(): void {
+  //   console.log(this.productService.GetAllProducts());
+
+  //   this.productService.GetAllProducts().subscribe({
+  //     next: (data) => {
+  //       this.products = data;
+  //     },
+  //     error: (err) => {
+  //       console.log(err);
+  //     },
+  //   });
+  // }
+
+// constructor(){
+//   let slideIndex = 1;
+//   showSlides(slideIndex);
+// }
+  
+//   // Next/previous controls
+//    plusSlides(n:any) {
+//     showSlides(slideIndex += n);
+//   }
+  
+//   // Thumbnail image controls
+//    currentSlide(n:any) {
+//     showSlides(slideIndex = n);
+//   }
+  
+                
+
 
   // category
   ClickLeft() {
@@ -73,6 +96,11 @@ export class HomeComponent implements OnInit {
   }
 }
 
+
+
+
+
+
 function sideScroll(
   element: any,
   direction: any,
@@ -93,3 +121,18 @@ function sideScroll(
     }
   }, speed);
 }
+//  function showSlides(n:any) {
+//   let i;
+//   let slides = document.getElementsByClassName("mySlides");
+//   let dots = document.getElementsByClassName("dot");
+//   if (n > slides.length) {slideIndex = 1}
+//   if (n < 1) {slideIndex = slides.length}
+//   for (i = 0; i < slides.length; i++) {
+//     slides[i].style.display = "none";
+//   }
+//   for (i = 0; i < dots.length; i++) {
+//     dots[i].className = dots[i].className.replace(" active", "");
+//   }
+//   slides[slideIndex-1].style.display = "block";
+//   dots[slideIndex-1].className += " active";
+
