@@ -92,12 +92,12 @@ const addProductToCart = async (req, res) => {
 
 const getAllProductInCart = async (req, res) => {
   try {
-    const carts = await User.find({ _id: req.user.userId }).select('cart');
+    const carts = await User.findById({ _id: req.user.userId }).select('cart');
     let productItems = [];
     let total = 0;
 
-    for (const product of carts) {
-      const dbProduct = await Product.findById({ _id: product.cart });
+    for (const product of carts.cart) {
+      const dbProduct = await Product.findById({ _id: product });
       if (!dbProduct) {
         return res.status(404).json({ msg: 'product not found' });
       }
