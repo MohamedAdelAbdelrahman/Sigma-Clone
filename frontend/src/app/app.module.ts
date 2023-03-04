@@ -12,7 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './components/category/category.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
-import { RegistrationComponent } from './registration/registration.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
