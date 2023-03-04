@@ -1,9 +1,32 @@
 const Product = require('../models/productModel');
 
 const getAllProducts = async (req, res) => {
+  const queryObject = {};
+
+  const { category, name, sort } = req.query;
+
+  if (category) {
+    queryObject.category = { $regex: category, $options: 'i' };
+  }
+
+  if (name) {
+    queryObject.name = { $regex: name, $options: 'i' };
+  }
+
+  let result = Product.find(queryObject);
+
+  if (sort) {
+    const sortList = sort.split(',').join(' ');
+    result = result.sort(sortList);
+  } else {
+    result = result.sort('createdAt');
+  }
+
   try {
-    const products = await Product.find({});
-    res.status(200).json({ products });
+    const products = await result;
+
+    // const products = await Product.find({});
+    res.status(200).json({ count: products.length, products });
   } catch (error) {
     res.status(500).json({ msg: error });
   }
