@@ -7,7 +7,7 @@ const helmet = require('helmet');
 const xss = require('xss-clean');
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
-// const orderRouter = require('./routes/orderRoutes');
+
 const userRouter = require('./routes/userRoutes');
 const notFound = require('./middleware/notFound');
 const connectDB = require('./db/connection');
@@ -18,6 +18,7 @@ const app = express();
 const fileUpload = require('express-fileupload');
 
 // middleware
+
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(cors());

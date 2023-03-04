@@ -42,7 +42,7 @@ const UserSchema = new mongoose.Schema({
     enum: ['user', 'admin'],
     default: 'user',
   },
-  wishlist: { type: Array },
+  cart: { type: Array },
 });
 
 // Hashing user's password
