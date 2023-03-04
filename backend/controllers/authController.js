@@ -1,4 +1,5 @@
 const User = require('../models/userModel');
+const { createTokenUser, attachCookiesToResponse } = require('../utils');
 
 const register = async (req, res) => {
   const { email } = req.body;
@@ -10,15 +11,10 @@ const register = async (req, res) => {
 
   const user = await User.create({ ...req.body, role: 'user' });
 
-  const tokenUser = {
-    userId: user._id,
-    name: user.name,
-    role: user.role,
-  };
+  const tokenUser = createTokenUser(user);
+  attachCookiesToResponse({ res, user: tokenUser });
 
-  const token = user.createJWT();
-
-  res.status(201).json({ user: tokenUser, token });
+  res.status(201).json({ user: tokenUser });
 };
 
 const login = async (req, res) => {
@@ -40,13 +36,19 @@ const login = async (req, res) => {
     return res.status(400).json({ msg: 'Invalid credentials' });
   }
 
-  const token = user.createJWT();
+  const tokenUser = createTokenUser(user);
+  attachCookiesToResponse({ res, user: tokenUser });
 
-  res.status(200).json({ user: { name: user.name }, token });
+  res.status(200).json({ user: tokenUser });
 };
 
 const logout = async (req, res) => {
-  res.status(200).json({ msg: 'user loggedin' });
+  res.cookie('token', '', {
+    httpOnly: true,
+    expires: new Date(Date.now() + 1000),
+  });
+
+  res.status(200).json({ msg: 'user logged out' });
 };
 
 module.exports = {
