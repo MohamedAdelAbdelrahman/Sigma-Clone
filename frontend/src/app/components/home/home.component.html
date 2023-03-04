@@ -49,10 +49,11 @@
         <div class="horizontal_slider" id="container">
             <div class="slider_container">
                 <div class="item hovereffect" *ngIf="products">
-                    <div class="itemImage  text-white">
+                    <a routerLink="/home/{{products.products[0]._id}}" class="itemImage  text-white">
                         <img src="assets/products_images/productImage.jpg" alt="" class="card-img">
-                    </div>
+                    </a>
                     <p class="parag">{{products.products[0].name }}</p>
+                    <p class="parag"></p>
 
                 </div>
                 <div class="item hovereffect">

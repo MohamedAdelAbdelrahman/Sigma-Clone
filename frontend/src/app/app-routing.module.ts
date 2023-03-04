@@ -8,16 +8,17 @@ import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './components/home/home.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { AccountComponent } from './components/account/account.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 const routes: Routes = [
-  {path:"home",component:HomeComponent},
-  {path:"",component:HomeComponent},
-  {path:"login",component:LoginComponent},
-  {path:"category",component:CategoryComponent},
-  {path:"cart",component:CartComponent},
-  {path:"registration",component:RegistrationComponent},
-  {path:"account",component:AccountComponent}
-
+  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'home/:id', component: ProductDetailsComponent },
+  { path: 'category', component: CategoryComponent },
+  { path: 'cart', component: CartComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'account', component: AccountComponent },
 ];
 
 @NgModule({
