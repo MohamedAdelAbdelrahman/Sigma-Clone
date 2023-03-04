@@ -5,7 +5,6 @@ const cors = require('cors');
 // security packages
 const helmet = require('helmet');
 const xss = require('xss-clean');
-
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
 // const orderRouter = require('./routes/orderRoutes');
