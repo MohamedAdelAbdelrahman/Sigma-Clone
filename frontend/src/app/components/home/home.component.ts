@@ -14,11 +14,23 @@ export class HomeComponent implements OnInit {
       next: (data) => {
         this.products = data;
         console.log(data);
+        // if (this.products.products[0].category == 'Desktop') {
+        //   console.log('done');
+          
+        // }
       },
+      
       error: (err) => {
         console.log(err);
       },
     });
+
+    // this.productService.GetCategories().subscribe({
+    //   next(value) {
+    //     console.log(value);
+        
+    //   },
+    // })
   }
   // category
   ClickLeft() {
