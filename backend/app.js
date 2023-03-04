@@ -11,17 +11,21 @@ const productRouter = require('./routes/productRoutes');
 // const orderRouter = require('./routes/orderRoutes');
 const userRouter = require('./routes/userRoutes');
 const connectDB = require('./db/connection');
-const notFound = require('./middleware/notFound');
+// const notFound = require('./middleware/notFound');
+
 const errorHandler = require('./middleware/errorHandler');
 const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
+const fileUpload = require('express-fileupload');
 
 // middleware
+app.use(express.static('./public'));
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
 app.use(xss());
+app.use(fileUpload());
 
 // routes
 app.get('/', (req, res) => {
@@ -33,7 +37,7 @@ app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
 // app.use('/api/v1/order', authMiddleware, orderRouter);
 
-app.use(notFound);
+// app.use(notFound);
 app.use(errorHandler);
 
 const port = process.env.PORT || 3000;

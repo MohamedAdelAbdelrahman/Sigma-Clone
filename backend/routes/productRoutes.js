@@ -7,6 +7,7 @@ const {
   updateProduct,
   deleteProduct,
 } = require('../controllers/productController');
+const {uploadProductImage} = require('../controllers/UploadsController');
 const checkAdminMiddleware = require('../middleware/checkAdminMiddleware');
 const authMiddleware = require('../middleware/authMiddleware');
 
@@ -19,5 +20,6 @@ router
   .get(getProduct)
   .patch(updateProduct)
   .delete(authMiddleware, checkAdminMiddleware, deleteProduct);
+router.route('/uploads').post(uploadProductImage);
 
 module.exports = router;
