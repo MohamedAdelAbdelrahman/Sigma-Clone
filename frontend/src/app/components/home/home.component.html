@@ -357,3 +357,103 @@
     </button>
   </div>
 </div>
+
+<!-- *********************Accessories******************* -->
+
+<div class="ps-4 pe-4 pt-5">
+  <h4>Accessories</h4>
+  <hr />
+  <div class="horizontal_slider container11" id="container3">
+    <section class="slider_container" *ngIf="products.products">
+      <article
+        class="item hovereffect"
+        *ngFor="let product of products.products"
+      >
+        <div *ngIf="product['category'] === 'Accessories'" class="item-container">
+          <div class="itemImage card bg-dark text-white">
+            <img src="assets{{ product.image }}" alt="" class="card-img" />
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="iconsofitem ps-3">
+            <button
+              class="Addtocart btn HoverBlue addCategorybtn"
+              (click)="AddToCart(product._id)"
+            >
+              <i class="bi bi-cart"></i>
+              Add to cart
+            </button>
+            <p class="parag">{{ product.name }}</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+<div class="buttonsOfScroll">
+  <button
+    type="button"
+    class="btn btnScroll sliderleft"
+    id="sliderleft3"
+    (click)="ClickLeft3()"
+  >
+    &#8592;
+  </button>
+  <button
+    type="button"
+    class="btn btnScroll sliderleft"
+    id="slideright3"
+    (click)="ClickRight3()"
+  >
+    &#8594;
+  </button>
+</div>
+
+<!-- *********************Network******************* -->
+
+<div class="ps-4 pe-4 pt-5">
+  <h4>Network</h4>
+  <hr />
+  <div class="horizontal_slider container11" id="container3">
+    <section class="slider_container" *ngIf="products.products">
+      <article
+        class="item hovereffect"
+        *ngFor="let product of products.products"
+      >
+        <div *ngIf="product['category'] === 'Network'" class="item-container">
+          <div class="itemImage card bg-dark text-white">
+            <img src="assets{{ product.image }}" alt="" class="card-img" />
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="iconsofitem ps-3">
+            <button
+              class="Addtocart btn HoverBlue addCategorybtn"
+              (click)="AddToCart(product._id)"
+            >
+              <i class="bi bi-cart"></i>
+              Add to cart
+            </button>
+            <p class="parag">{{ product.name }}</p>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</div>
+<div class="buttonsOfScroll">
+  <button
+    type="button"
+    class="btn btnScroll sliderleft"
+    id="sliderleft1"
+    (click)="ClickLeft1()"
+  >
+    &#8592;
+  </button>
+  <button
+    type="button"
+    class="btn btnScroll sliderleft"
+    id="slideright1"
+    (click)="ClickRight1()"
+  >
+    &#8594;
+  </button>
+</div>
