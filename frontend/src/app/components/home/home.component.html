@@ -138,7 +138,10 @@
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
-          <div *ngIf="product['category'] === 'Desktop'">
+          <a
+            routerLink="/home/{{ product._id }}"
+            *ngIf="product['category'] === 'Desktop'"
+          >
             <div class="itemImage card bg-dark text-white">
               <img src="assets{{ product.image }}" alt="" class="card-img" />
               <div class="card-img-overlay"></div>
@@ -153,7 +156,7 @@
               </button>
               <p class="parag">{{ product.name }}</p>
             </div>
-          </div>
+          </a>
         </article>
       </section>
     </div>
@@ -184,7 +187,8 @@
     <hr />
     <div class="horizontal_slider container2" id="container2">
       <section class="slider_container" *ngIf="products.products">
-        <article
+        <a
+          routerLink="/home/{{ product._id }}"
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
@@ -207,7 +211,7 @@
               <p class="parag">{{ product.name }}</p>
             </div>
           </div>
-        </article>
+        </a>
       </section>
     </div>
   </div>
@@ -268,7 +272,11 @@
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
-          <div *ngIf="product['category'] === 'Storage'" class="item-container">
+          <a
+            routerLink="/home/{{ product._id }}"
+            *ngIf="product['category'] === 'Storage'"
+            class="item-container"
+          >
             <div class="itemImage card bg-dark text-white">
               <img src="assets{{ product.image }}" alt="" class="card-img" />
               <div class="card-img-overlay"></div>
@@ -283,7 +291,7 @@
               </button>
               <p class="parag">{{ product.name }}</p>
             </div>
-          </div>
+          </a>
         </article>
       </section>
     </div>
@@ -318,7 +326,11 @@
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
-          <div *ngIf="product['category'] === 'Monitor'" class="item-container">
+          <a
+            routerLink="/home/{{ product._id }}"
+            *ngIf="product['category'] === 'Monitor'"
+            class="item-container"
+          >
             <div class="itemImage card bg-dark text-white">
               <img src="assets{{ product.image }}" alt="" class="card-img" />
               <div class="card-img-overlay"></div>
@@ -333,7 +345,7 @@
               </button>
               <p class="parag">{{ product.name }}</p>
             </div>
-          </div>
+          </a>
         </article>
       </section>
     </div>
@@ -369,7 +381,11 @@
         class="item hovereffect"
         *ngFor="let product of products.products"
       >
-        <div *ngIf="product['category'] === 'Accessories'" class="item-container">
+        <a
+          routerLink="/home/{{ product._id }}"
+          *ngIf="product['category'] === 'Accessories'"
+          class="item-container"
+        >
           <div class="itemImage card bg-dark text-white">
             <img src="assets{{ product.image }}" alt="" class="card-img" />
             <div class="card-img-overlay"></div>
@@ -384,7 +400,7 @@
             </button>
             <p class="parag">{{ product.name }}</p>
           </div>
-        </div>
+        </a>
       </article>
     </section>
   </div>
@@ -419,7 +435,11 @@
         class="item hovereffect"
         *ngFor="let product of products.products"
       >
-        <div *ngIf="product['category'] === 'Network'" class="item-container">
+        <a
+          routerLink="/home/{{ product._id }}"
+          *ngIf="product['category'] === 'Network'"
+          class="item-container"
+        >
           <div class="itemImage card bg-dark text-white">
             <img src="assets{{ product.image }}" alt="" class="card-img" />
             <div class="card-img-overlay"></div>
@@ -434,7 +454,7 @@
             </button>
             <p class="parag">{{ product.name }}</p>
           </div>
-        </div>
+        </a>
       </article>
     </section>
   </div>
