@@ -1,0 +1,15 @@
+a:hover {
+  text-decoration: none;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.search-products .product a.product-desc {
+  color: inherit;
+}
+
+.search-products .product h5:hover {
+  color: #17a2b8;
+}

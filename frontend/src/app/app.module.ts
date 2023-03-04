@@ -16,8 +16,6 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { SearchComponent } from './components/search/search.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
