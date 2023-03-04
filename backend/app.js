@@ -8,7 +8,7 @@ const xss = require('xss-clean');
 
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
-const orderRouter = require('./routes/orderRoutes');
+// const orderRouter = require('./routes/orderRoutes');
 const userRouter = require('./routes/userRoutes');
 const notFound = require('./middleware/notFound');
 const connectDB = require('./db/connection');
@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
-app.use('/api/v1/order', orderRouter);
+// app.use('/api/v1/order', orderRouter);
 
 app.use(notFound);
 app.use(errorHandler);
