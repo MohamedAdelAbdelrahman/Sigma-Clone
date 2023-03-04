@@ -2,13 +2,15 @@ require('dotenv').config();
 require('express-async-errors');
 const express = require('express');
 const cors = require('cors');
-const rateLimiter = require('express-rate-limit');
 // security packages
 const helmet = require('helmet');
 const xss = require('xss-clean');
+const rateLimiter = require('express-rate-limit');
+const mongoSanitize = require('express-mongo-sanitize');
+// const cookieParser = require('cookie-parser');
+
 const authRouter = require('./routes/authRoutes');
 const productRouter = require('./routes/productRoutes');
-
 const userRouter = require('./routes/userRoutes');
 const notFound = require('./middleware/notFound');
 const connectDB = require('./db/connection');
@@ -29,9 +31,12 @@ app.use(
   })
 );
 app.use(express.json());
+// app.use(cookieParser(process.env.JWT_SECRET));
+
 app.use(cors());
 app.use(helmet());
 app.use(xss());
+app.use(mongoSanitize());
 app.use(fileUpload());
 
 // routes
@@ -42,7 +47,6 @@ app.get('/', (req, res) => {
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', authMiddleware, userRouter);
 app.use('/api/v1/products', productRouter);
-// app.use('/api/v1/order', orderRouter);
 
 app.use(notFound);
 app.use(errorHandler);
