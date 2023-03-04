@@ -13,7 +13,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { LoginComponent } from './components/login/login.component';
 import { RouterModule } from '@angular/router';
 import { RegistrationComponent } from './registration/registration.component';
-import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
 
 
