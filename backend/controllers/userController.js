@@ -74,7 +74,12 @@ const deleteUser = async (req, res) => {
 //*create cart
 const addProductToCart = async (req, res) => {
   try {
-    console.log(req.user.userId, req.body);
+    const userData = await User.findOne({ _id: req.user.userId });
+    const productIndex = userData.cart.indexOf(req.body.productId);
+    if (productIndex !== -1) {
+      return res.status(200).send();
+    }
+
     const product = await User.updateOne(
       { _id: req.user.userId },
       { $push: { cart: req.body.productId } }
@@ -85,7 +90,6 @@ const addProductToCart = async (req, res) => {
   }
 };
 
-//*get all products in cart
 const getAllProductInCart = async (req, res) => {
   try {
     const carts = await User.find({ _id: req.user.userId }).select('cart');
