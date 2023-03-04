@@ -123,7 +123,7 @@
       id="slideright"
       (click)="ClickRight()"
     >
-      >
+      &#8594;
     </button>
   </div>
 
@@ -133,181 +133,29 @@
     <h4>DESKTOP</h4>
     <hr />
     <div class="horizontal_slider container11" id="container1">
-      <div class="slider_container">
-        <div class="item hovereffect">
-          <div class="itemImage card bg-dark text-white">
-            <img
-              src="assets{{ products.products[2].image }}"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-img-overlay"></div>
+      <section class="slider_container" *ngIf="products.products">
+        <article
+          class="item hovereffect"
+          *ngFor="let product of products.products"
+        >
+          <div *ngIf="product['category'] === 'Desktop'">
+            <div class="itemImage card bg-dark text-white">
+              <img src="assets{{ product.image }}" alt="" class="card-img" />
+              <div class="card-img-overlay"></div>
+            </div>
+            <div class="iconsofitem ps-3">
+              <button
+                class="Addtocart btn HoverBlue addCategorybtn"
+                (click)="AddToCart(product._id)"
+              >
+                <i class="bi bi-cart"></i>
+                Add to cart
+              </button>
+              <p class="parag">{{ product.name }}</p>
+            </div>
           </div>
-          <div class="iconsofitem ps-3">
-            <button
-              class="Addtocart btn HoverBlue addCategorybtn"
-              (click)="AddToCart(products.products[22]._id)"
-            >
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">DESKTOP</p>
-        </div>
-
-        <div class="item hovereffect">
-          <img src="assets/images/network.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NETWORK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/notebook.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NOTEBOOK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/storage.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">STORAGE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tv.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TV</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/software.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">SOFTWARE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Bundles.jfif" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">BUNDLES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Access.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">ACCESSORIES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tools.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TOOLS</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   </div>
   <div class="buttonsOfScroll">
@@ -317,7 +165,7 @@
       id="sliderleft1"
       (click)="ClickLeft1()"
     >
-      <
+      &#8592;
     </button>
     <button
       type="button"
@@ -325,7 +173,7 @@
       id="slideright1"
       (click)="ClickRight1()"
     >
-      >
+      &#8594;
     </button>
   </div>
 
@@ -335,183 +183,32 @@
     <h4>NOTEBOOK</h4>
     <hr />
     <div class="horizontal_slider container2" id="container2">
-      <div class="slider_container">
-        <div class="item hovereffect">
-          <div class="itemImage card bg-dark text-white">
-            <img src="assets/images/desktop.jpeg" alt="" class="card-img" />
-            <div class="card-img-overlay">
+      <section class="slider_container" *ngIf="products.products">
+        <article
+          class="item hovereffect"
+          *ngFor="let product of products.products"
+        >
+          <div
+            *ngIf="product['category'] === 'Notebook'"
+            class="item-container"
+          >
+            <div class="itemImage card bg-dark text-white">
+              <img src="assets{{ product.image }}" alt="" class="card-img" />
+              <div class="card-img-overlay"></div>
+            </div>
+            <div class="iconsofitem ps-3">
               <button
-                class="btn HoverBlue addCategorybtn"
-                style="margin-left: 40%; margin-top: 18%"
+                class="Addtocart btn HoverBlue addCategorybtn"
+                (click)="AddToCart(product._id)"
               >
-                <i class="bi bi-eye"></i>
+                <i class="bi bi-cart"></i>
+                Add to cart
               </button>
+              <p class="parag">{{ product.name }}</p>
             </div>
           </div>
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">DESKTOP</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/network.jpg" alt="" class="img-responsive" />
-
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NETWORK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/notebook.jpg" alt="" class="img-responsive" />
-
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NOTEBOOK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/storage.jpg" alt="" class="img-responsive" />
-
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">STORAGE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tv.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TV</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/software.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">SOFTWARE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Bundles.jfif" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">BUNDLES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Access.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">ACCESSORIES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tools.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TOOLS</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   </div>
   <div class="buttonsOfScroll">
@@ -521,7 +218,7 @@
       id="sliderleft2"
       (click)="ClickLeft2()"
     >
-      <
+      &#8592;
     </button>
     <button
       type="button"
@@ -529,7 +226,7 @@
       id="slideright2"
       (click)="ClickRight2()"
     >
-      >
+      &#8594;
     </button>
   </div>
 
@@ -566,173 +263,29 @@
     <h4>STORAGE</h4>
     <hr />
     <div class="horizontal_slider container11" id="container3">
-      <div class="slider_container">
-        <div class="item hovereffect">
-          <div class="itemImage card bg-dark text-white">
-            <img src="assets/images/desktop.jpeg" alt="" class="card-img" />
-            <div class="card-img-overlay"></div>
+      <section class="slider_container" *ngIf="products.products">
+        <article
+          class="item hovereffect"
+          *ngFor="let product of products.products"
+        >
+          <div *ngIf="product['category'] === 'Storage'" class="item-container">
+            <div class="itemImage card bg-dark text-white">
+              <img src="assets{{ product.image }}" alt="" class="card-img" />
+              <div class="card-img-overlay"></div>
+            </div>
+            <div class="iconsofitem ps-3">
+              <button
+                class="Addtocart btn HoverBlue addCategorybtn"
+                (click)="AddToCart(product._id)"
+              >
+                <i class="bi bi-cart"></i>
+                Add to cart
+              </button>
+              <p class="parag">{{ product.name }}</p>
+            </div>
           </div>
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">DESKTOP</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/network.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NETWORK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/notebook.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NOTEBOOK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/storage.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">STORAGE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tv.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TV</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/software.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">SOFTWARE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Bundles.jfif" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">BUNDLES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Access.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">ACCESSORIES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tools.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TOOLS</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   </div>
   <div class="buttonsOfScroll">
@@ -742,7 +295,7 @@
       id="sliderleft3"
       (click)="ClickLeft3()"
     >
-      <
+      &#8592;
     </button>
     <button
       type="button"
@@ -750,7 +303,7 @@
       id="slideright3"
       (click)="ClickRight3()"
     >
-      >
+      &#8594;
     </button>
   </div>
 
@@ -760,173 +313,29 @@
     <h4>MONITORS</h4>
     <hr />
     <div class="horizontal_slider container11" id="container4">
-      <div class="slider_container">
-        <div class="item hovereffect">
-          <div class="itemImage card bg-dark text-white">
-            <img src="assets/images/desktop.jpeg" alt="" class="card-img" />
-            <div class="card-img-overlay"></div>
+      <section class="slider_container" *ngIf="products.products">
+        <article
+          class="item hovereffect"
+          *ngFor="let product of products.products"
+        >
+          <div *ngIf="product['category'] === 'Monitor'" class="item-container">
+            <div class="itemImage card bg-dark text-white">
+              <img src="assets{{ product.image }}" alt="" class="card-img" />
+              <div class="card-img-overlay"></div>
+            </div>
+            <div class="iconsofitem ps-3">
+              <button
+                class="Addtocart btn HoverBlue addCategorybtn"
+                (click)="AddToCart(product._id)"
+              >
+                <i class="bi bi-cart"></i>
+                Add to cart
+              </button>
+              <p class="parag">{{ product.name }}</p>
+            </div>
           </div>
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">DESKTOP</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/network.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NETWORK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/notebook.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">NOTEBOOK</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/storage.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">STORAGE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tv.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TV</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/software.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">SOFTWARE</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Bundles.jfif" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">BUNDLES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/Access.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">ACCESSORIES</p>
-        </div>
-        <div class="item hovereffect">
-          <img src="assets/images/tools.jpg" alt="" class="img-responsive" />
-          <div class="iconsofitem ps-3">
-            <button class="Addtocart btn HoverBlue addCategorybtn">
-              Add to cart
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-heart"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="fa-solid fa-arrows-rotate"></i>
-            </button>
-            <button class="btn HoverBlue addCategorybtn">
-              <i class="bi bi-cart"></i>
-            </button>
-          </div>
-          <p class="parag">TOOLS</p>
-        </div>
-      </div>
+        </article>
+      </section>
     </div>
   </div>
   <div class="buttonsOfScroll">
@@ -936,7 +345,7 @@
       id="sliderleft4"
       (click)="ClickLeft4()"
     >
-      <
+      &#8592;
     </button>
     <button
       type="button"
@@ -944,7 +353,7 @@
       id="slideright4"
       (click)="ClickRight4()"
     >
-      >
+      &#8594;
     </button>
   </div>
 </div>
