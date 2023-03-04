@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { CartComponent } from './components/cart/cart.component';
 import { AccountComponent } from './components/account/account.component';
 import { HeadersOfPagesComponent } from './components/headers-of-pages/headers-of-pages.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CategoryComponent } from './components/category/category.component';
 import { LoginComponent } from './login/login.component';
