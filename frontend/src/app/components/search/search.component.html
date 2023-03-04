@@ -1,1 +1,130 @@
-<p>search works!</p>
+<main class="container">
+  <ul class="breadcrumb">
+    <li class="text-secondary">
+      <i class="fa fa-home fa-xs"></i>
+    </li>
+    <li class="text-secondary mx-3">
+      <i class="fa fa-angle-right fa-xs"></i>
+    </li>
+    <li><a href="#">Search</a></li>
+  </ul>
+
+  <div class="row">
+    <aside
+      class="col-md-3 col-sm-4 col-xs-12 content-aside left_column sidebar-offcanvas"
+    >
+      <div id="accordion">
+        <div class="card">
+          <div class="card-header p-0" id="headingOne">
+            <h5 class="mb-0">
+              <button
+                class="btn btn-block px-2 py-3 text-left"
+                data-toggle="collapse"
+                data-target="#collapseCategory"
+                aria-expanded="true"
+                aria-controls="collapseCategory"
+              >
+                Category
+              </button>
+            </h5>
+          </div>
+
+          <div
+            id="collapseCategory"
+            class="collapse show"
+            aria-labelledby="headingOne"
+            data-parent="#accordion"
+          >
+            <a
+              href="?category=desktop"
+              class="btn btn-block text-left text-capitalize border-bottom mt-0 py-2"
+              >desktop</a
+            >
+            <a
+              href="?category=desk"
+              class="btn btn-block text-left text-capitalize border-bottom mt-0 py-2"
+              >desk</a
+            >
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="col-md-9 col-sm-8">
+      <div class="products-category px-3">
+        <div class="row">
+          <h3 class="title-category">mouse</h3>
+        </div>
+        <!-- product filter -->
+        <div class="row">
+          <div class="product-filter product-filter-top filters-panel">
+            <div class="list-view d-inline-flex">
+              <a href="?sort=price" class="mr-2">
+                <button
+                  class="btn btn-default grid active"
+                  data-toggle="tooltip"
+                  data-original-title=""
+                  title=""
+                >
+                  <i class="fa fa-arrow-circle-up"></i>
+                </button>
+              </a>
+              <a href="?sort=-price">
+                <button
+                  class="btn btn-default list"
+                  data-toggle="tooltip"
+                  data-original-title=""
+                  title=""
+                >
+                  <i class="fa fa-arrow-circle-down"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- product filter ends -->
+
+        <!-- products -->
+        <div class="search-products row mt-3">
+          <article class="product col-md-6 col-lg-4 col-xl-3 card px-0">
+            <a href="#">
+              <img
+                class="card-img-top"
+                src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+                alt="Card image"
+              />
+            </a>
+            <div class="px-2">
+              <a href="#" class="product-desc">
+                <h5 class="small text-center my-2">
+                  Some quick example text to build on the card title and make up
+                  the bulk of the card's content.
+                </h5>
+              </a>
+
+              <div class="d-flex justify-content-between">
+                <p class="d-flex align-items-center">
+                  <i class="text-success fa-2xs fa-solid fa-circle"></i>
+                  <span class="ml-1 small">In Stock</span>
+                </p>
+                <p>
+                  <span class="text-info">299 LE</span>
+                  <small
+                    class="text-secondary"
+                    style="text-decoration: line-through"
+                    >999</small
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- In case not found -->
+  <!-- <div>
+        <h4 class="text-center">No Products Found!</h4>
+      </div> -->
+</main>
