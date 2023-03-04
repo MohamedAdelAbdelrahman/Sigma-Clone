@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeadersOfPagesComponent } from './headers-of-pages/headers-of-pages.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeadersOfPagesComponent } from './components/headers-of-pages/headers-of-pages.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { CategoryComponent } from './category/category.component';
+import { CategoryComponent } from './components/category/category.component';
 import { CartComponent } from './components/cart/cart.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';

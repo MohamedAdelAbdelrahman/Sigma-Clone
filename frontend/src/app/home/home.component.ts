@@ -21,57 +21,58 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+  
+// category
+ClickLeft() {
+  var container = document.getElementById('container');
+  sideScroll(container, 'left', 25, 270, 10);
+}
+ClickRight() {
+  var container = document.getElementById('container');
+  sideScroll(container, 'right', 25, 270, 10);
+}
+// desktop
+
+ClickLeft1() {
+  var container = document.getElementById('container1');
+  sideScroll(container, 'left', 25, 270, 10);
+}
+ClickRight1() {
+  var container = document.getElementById('container1');
+  sideScroll(container, 'right', 25, 270, 10);
 }
 
-// category
-//   ClickLeft() {
-//     var container = document.getElementById('container');
-//     sideScroll(container, 'left', 25, 270, 10);
-//   }
-//   ClickRight() {
-//     var container = document.getElementById('container');
-//     sideScroll(container, 'right', 25, 270, 10);
-//   }
-//   // desktop
+// notebook
+ClickLeft2() {
+  var container = document.getElementById('container2');
+  sideScroll(container, 'left', 25, 270, 10);
+}
+ClickRight2() {
+  var container = document.getElementById('container2');
+  sideScroll(container, 'right', 25, 270, 10);
+}
 
-//   ClickLeft1() {
-//     var container = document.getElementById('container1');
-//     sideScroll(container, 'left', 25, 270, 10);
-//   }
-//   ClickRight1() {
-//     var container = document.getElementById('container1');
-//     sideScroll(container, 'right', 25, 270, 10);
-//   }
+// storage
+ClickLeft3() {
+  var container = document.getElementById('container3');
+  sideScroll(container, 'left', 25, 270, 10);
+}
+ClickRight3() {
+  var container = document.getElementById('container3');
+  sideScroll(container, 'right', 25, 270, 10);
+}
+// monitor
+ClickLeft4() {
+  var container = document.getElementById('container4');
+  sideScroll(container, 'left', 25, 270, 10);
+}
+ClickRight4() {
+  var container = document.getElementById('container4');
+  sideScroll(container, 'right', 25, 270, 10);
+}
+}
 
-//   // notebook
-//   ClickLeft2() {
-//     var container = document.getElementById('container2');
-//     sideScroll(container, 'left', 25, 270, 10);
-//   }
-//   ClickRight2() {
-//     var container = document.getElementById('container2');
-//     sideScroll(container, 'right', 25, 270, 10);
-//   }
 
-//   // storage
-//   ClickLeft3() {
-//     var container = document.getElementById('container3');
-//     sideScroll(container, 'left', 25, 270, 10);
-//   }
-//   ClickRight3() {
-//     var container = document.getElementById('container3');
-//     sideScroll(container, 'right', 25, 270, 10);
-//   }
-//   // monitor
-//   ClickLeft4() {
-//     var container = document.getElementById('container4');
-//     sideScroll(container, 'left', 25, 270, 10);
-//   }
-//   ClickRight4() {
-//     var container = document.getElementById('container4');
-//     sideScroll(container, 'right', 25, 270, 10);
-//   }
-// }
 
 function sideScroll(
   element: any,
