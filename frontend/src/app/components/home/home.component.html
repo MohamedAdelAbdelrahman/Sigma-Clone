@@ -45,7 +45,7 @@
     <hr />
     <div class="horizontal_slider" id="container">
       <div class="slider_container">
-        <div class="item hovereffect" *ngIf="products">
+        <a class="item hovereffect" *ngIf="products" routerLink="/category">
           <div class="itemImage text-white">
             <img
               src="assets/images/desktop.jpeg"
@@ -54,55 +54,37 @@
             />
             </div>
           <p class="parag">Desktop</p>
-        </div>
-        <div class="item hovereffect">
-          <div class="itemImage text-white">
+          </a>
+        <a class="item hovereffect">
+          <div class="itemImage text-white" routerLink="/category">
             <img src="assets/images/network.jpg" alt="" />
           </div>
           <p class="parag">NETWORK</p>
-        </div>
-        <div class="item hovereffect">
+        </a>
+        <a class="item hovereffect" routerLink="/category">
           <div class="itemImage text-white">
             <img src="assets/images/notebook.jpg" alt="" />
           </div>
           <p class="parag">NOTEBOOK</p>
-        </div>
-        <div class="item hovereffect">
+        </a>
+        <a class="item hovereffect" routerLink="/category">
           <div class="itemImage text-white">
             <img src="assets/images/storage.jpg" alt="" />
           </div>
           <p class="parag">STORAGE</p>
-        </div>
-        <div class="item hovereffect">
-          <div class="itemImage text-white">
-            <img src="assets/images/tv.jpg" alt="" />
-          </div>
-          <p class="parag">TV</p>
-        </div>
-        <div class="item hovereffect">
-          <div class="itemImage text-white">
-            <img src="assets/images/software.jpg" alt="" />
-          </div>
-          <p class="parag">SOFTWARE</p>
-        </div>
-        <div class="item hovereffect">
-          <div class="itemImage text-white">
-            <img src="assets/images/Bundles.jfif" alt="" />
-          </div>
-          <p class="parag">BUNDLES</p>
-        </div>
-        <div class="item hovereffect">
+        </a>
+        <a class="item hovereffect" routerLink="/category" (click)="AccessCategory()">
           <div class="itemImage text-white">
             <img src="assets/images/Access.jpg" alt="" />
           </div>
           <p class="parag">ACCESSORIES</p>
-        </div>
-        <div class="item hovereffect">
+        </a >
+        <a class="item hovereffect" routerLink="/category">
           <div class="itemImage text-white">
-            <img src="assets/images/tools.jpg" alt="" />
+            <img src="assets/images/monitors.jpg" alt="" />
           </div>
-          <p class="parag">TOOLS</p>
-        </div>
+          <p class="parag">MONITORS</p>
+        </a>
       </div>
     </div>
   </div>

@@ -53,7 +53,9 @@ export class HomeComponent implements OnInit {
       },
     });
   }
-
+  AccessCategory(){
+    this.products.category = "Accessories" ;
+  }
   // category
   ClickLeft() {
     var container = document.getElementById('container');

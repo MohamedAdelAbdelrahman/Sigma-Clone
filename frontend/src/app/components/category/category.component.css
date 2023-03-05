@@ -19,6 +19,7 @@
 .item {
   display: inline-block;
   padding-right: 60px;
+  text-decoration: none;
 }
 
 .item img {
@@ -30,13 +31,27 @@
 .HoverBlue {
   transition: 0.5s;
 }
+.parag{
+  text-align: center;
+  text-decoration: none;
+  color: black;
+}
+
+.HoverBlue:hover {
+  color: rgb(158, 158, 233);
+}
+
+.Addtocart {
+  width: 55%;
+}
+.iconsofitem {
+  padding-top: 14px;
+}
 .addCategorybtn {
   background-color: rgb(105, 186, 197);
   color: white;
   height: 39px;
   font-size: 17px;
-}
-
-.HoverBlue:hover {
-  color: rgb(158, 158, 233);
+  margin-right: 3px;
+  margin-left: 23%;
 }

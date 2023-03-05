@@ -1,0 +1,27 @@
+<section class="container" *ngIf="products.products">
+    <a
+    routerLink="/category/{{ product._id }}"
+      class="item hovereffect pt-3" 
+      *ngFor="let product of products.products"
+    >
+      <div
+      class="item-container"
+        *ngIf="product['category'] === 'Desktop'"
+      >
+        <div class="itemImage card bg-dark text-white">
+          <img src="assets{{ product.image }}" alt="" class="card-img" />
+          <div class="card-img-overlay"></div>
+        </div>
+        <div class="iconsofitem ps-3">
+          <button
+            class="Addtocart btn HoverBlue addCategorybtn"
+            (click)="AddToCart(product._id)"
+          >
+            <i class="bi bi-cart"></i>
+            Add to cart
+          </button>
+          <p class="parag HoverBlue" >{{ product.name }}</p>
+        </div>
+    </div>
+    </a>
+  </section>

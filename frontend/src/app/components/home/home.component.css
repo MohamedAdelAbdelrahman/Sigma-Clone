@@ -64,6 +64,8 @@
 .item {
   display: inline-block;
   background-color: white;
+  text-decoration: none;
+  color: black;
 }
 .item .item-container {
   padding-right: 60px;
