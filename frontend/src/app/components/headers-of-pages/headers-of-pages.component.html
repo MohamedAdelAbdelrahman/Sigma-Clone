@@ -83,7 +83,7 @@
         class="fa-regular fa-user"
         style="font-size: 37px; padding-top: 6px; padding-right: 4px"
       ></i>
-      <div>
+      <div *ngIf="!loggedUser">
         <div style="color: rgb(192, 192, 192)">My Account</div>
         <a
           routerLink="login"
@@ -95,6 +95,14 @@
           routerLink="registration"
           style="text-decoration: none; color: black; font-weight: bold"
           >Register</a
+        >
+      </div>
+      <div *ngIf="loggedUser">
+        Hello, {{ loggedUser }}!
+        <a
+          routerLink="registration"
+          style="text-decoration: none; color: black; font-weight: bold"
+          >Logout</a
         >
       </div>
     </div>
