@@ -17,7 +17,7 @@
       <p class="HoverBlue">Description: {{ product.product.description }}</p>
 
       <button class="Addtocart btn HoverBlue addCategorybtn">
-        &nbsp; <i class="bi bi-cart"></i>Add to cart
+        &nbsp; <i class="bi bi-cart" (click)="AddToCart(product._id)"></i>Add to cart
       </button>
     </div>
   </div>
