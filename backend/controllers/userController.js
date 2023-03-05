@@ -118,9 +118,10 @@ const getAllProductInCart = async (req, res) => {
 
 const getAllProductInCartByEmail = async (req, res) => {
   try {
-    const carts = await User.find({ email: req.params.userEmail }).select(
+    const carts = await User.findOne({ email: req.params.userEmail }).select(
       'cart'
     );
+    console.log(carts);
     let productItems = [];
     let total = 0;
 
