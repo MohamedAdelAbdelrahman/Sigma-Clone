@@ -54,6 +54,7 @@ export class RegistrationComponent {
         console.log(value);
         this.newUser = value;
         if (this.newUser) {
+          localStorage.setItem('user', name);
           this.router.navigate(['/']);
         }
       },
