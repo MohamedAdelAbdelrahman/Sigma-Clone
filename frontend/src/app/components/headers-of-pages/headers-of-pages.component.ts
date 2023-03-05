@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-headers-of-pages',
@@ -6,10 +7,19 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./headers-of-pages.component.css'],
 })
 export class HeadersOfPagesComponent implements OnInit {
+  constructor(public accountService: AccountService) {}
   loggedUser: any;
 
   ngOnInit() {
     this.loggedUser = this.readLocalStorageValue('user');
+  }
+
+  Logout() {
+    this.accountService.LogoutUser().subscribe({
+      next(value) {
+        alert('bye bye user');
+      },
+    });
   }
 
   readLocalStorageValue(key: any): any {
