@@ -1,44 +1,17 @@
-<!-- <app-not-found [visible]="!product" notFoundMessage="product Not Found" resetLinkText="Back To Homepage">
-</app-not-found> -->
-<div *ngIf="product" class="container">
-    <img [src]="product.imageUrl" [alt]="product.name" />
+<div class="container pt-2">
+    <div class="item hovereffect">
+        
+            <img src="assets{{ product.product.image }}" width="500" height="40" class="img-responsive">
+            <div class="iconsofitem ps-5">
+              <p>{{ product.product.category }}</p>
+              <p class="HoverBlue" style="font-weight: bold;">{{ product.product.name }}</p>
+              <p style="color:   rgb(158, 158, 233);">{{ product.product.price}}</p>
+              <p class="HoverBlue">{{ product.product.description }}</p>
 
-    <div class="details">
-        <div class="header">
-            <span class="name">
-                {{product.name}}
-            </span>
-            <span class="favorite {{product.favorite? '': 'not'}}">❤</span>
+                <button class="Addtocart btn HoverBlue addCategorybtn">&nbsp; <i class="bi bi-cart "></i>Add to cart</button>
+                        </div>
+       
         </div>
-        <div class="rating">
-
-        </div>
-
-        <div class="origins">
-            <span *ngFor="let origin of product.origins">
-                {{origin}}
-            </span>
-        </div>
-
-        <div class="tags">
-            <a *ngFor="let tag of product.tags" routerLink="/tag/{{tag}}">
-                {{tag}}
-            </a>
-        </div>
-
-        <div class="cook-time">
-            <span>
-                Time to cook about <strong>{{product.cookTime}}</strong> minutes
-            </span>
-        </div>
-
-        <div class="price">
-            <span>
-                {{product.price | currency}}
-            </span>
-        </div>
-
-        <button>Add To Cart</button>
 
     </div>
-</div>
+

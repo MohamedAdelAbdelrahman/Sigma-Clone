@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -7,10 +7,17 @@ import { Injectable } from '@angular/core';
 export class ProductsService {
   constructor(private http: HttpClient) {}
 
-  private base_url = 'http://localhost:3000/api/v1/products';
+  private base_url = 'http://localhost:3000/api/v1/products/';
 
   GetAllProducts() {
     return this.http.get(this.base_url);
+  }
+
+  GetCategories() {
+    let queryParams = new HttpParams();
+    queryParams = queryParams.append('categories', 'notebook');
+
+    return this.http.get(this.base_url, { params: queryParams });
   }
 
   GetProductById(id: any) {

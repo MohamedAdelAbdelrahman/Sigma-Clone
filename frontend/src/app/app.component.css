@@ -1,41 +1,45 @@
 #btn-back-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    
-  }
-  :root{scroll-behavior:smooth;}
-  main {position: relative;}
-  section {padding-bottom: 5rem;}
-  
-  footer {
-    background-color: black;
-    color: white;
-    text-align:center;
-    padding: 3rem;
-  }
-  
-  .scroll-top {
-    position: absolute;
-    top: 120vh;
-    bottom: 2rem;
-    right: 1rem;
-  }
-  
-  .scroll-top__link {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 85vh;
-    text-decoration:none;
-    border-radius: .25rem;
-    background-color: gray;
-    padding:1rem;
-    color: white;
-    font-weight:700;
-    border: none;
-    border-radius: 50%;
-    height: 50px;
-  }
-  
-  .scroll-top__link:hover {
-  }
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+:root {
+  scroll-behavior: smooth;
+}
+main {
+  position: relative;
+}
+section {
+  padding-bottom: 5rem;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 3rem;
+}
+
+.scroll-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.scroll-top__link {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 85vh;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  background-color: gray;
+  padding: 0.75rem 1rem 1rem;
+  color: white;
+  font-weight: 700;
+  border: none;
+  border-radius: 50%;
+  height: 50px;
+}
+
+.scroll-top__link:hover {
+}

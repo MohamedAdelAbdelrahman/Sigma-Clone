@@ -42,7 +42,7 @@ const UserSchema = new mongoose.Schema({
     enum: ['user', 'admin'],
     default: 'user',
   },
-  wishlist: { type: Array },
+  cart: { type: Array },
 });
 
 // Hashing user's password
@@ -54,20 +54,6 @@ UserSchema.pre('save', async function () {
 UserSchema.methods.checkPassword = async function (candidatePassword) {
   const isMatch = await bcryptjs.compare(candidatePassword, this.password);
   return isMatch;
-};
-
-UserSchema.methods.createJWT = function () {
-  return jwt.sign(
-    {
-      userId: this._id,
-      name: this.name,
-      role: this.role,
-    },
-    process.env.JWT_SECRET,
-    {
-      expiresIn: process.env.JWT_LIFETIME || '1d',
-    }
-  );
 };
 
 module.exports = mongoose.model('User', UserSchema);

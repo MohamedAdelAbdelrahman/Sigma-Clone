@@ -21,6 +21,8 @@ export class ProductDetailsComponent implements OnInit {
     this.productService.GetProductById(this.ID).subscribe({
       next: (data) => {
         this.product = data;
+        console.log(data);
+        
       },
       error: (err) => {
         console.log(err);

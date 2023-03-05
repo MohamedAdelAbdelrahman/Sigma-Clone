@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 import { ProductsService } from '../../services/products.service';
 
 @Component({
@@ -8,71 +9,100 @@ import { ProductsService } from '../../services/products.service';
 })
 export class HomeComponent implements OnInit {
   products: any;
-
-  constructor(public productService: ProductsService) {}
+  categories: any;
+  constructor(
+    public productService: ProductsService,
+    public cartService: CartService
+  ) {}
   ngOnInit(): void {
     this.productService.GetAllProducts().subscribe({
       next: (data) => {
         this.products = data;
         console.log(data);
+        // if (this.products.products[0].category == 'Desktop') {
+        //   console.log('done');
+
+        // }
       },
+
       error: (err) => {
         console.log(err);
       },
     });
+
+    // this.productService.GetCategories().subscribe({
+    //   next: (value) => {
+    //     this.categories = value;
+    //     console.log('this is data' + value);
+    //   },
+
+    //   // error(err) {
+    //   //   console.log(err);
+    //   // },
+    // });
   }
-  
-// category
-ClickLeft() {
-  var container = document.getElementById('container');
-  sideScroll(container, 'left', 25, 270, 10);
-}
-ClickRight() {
-  var container = document.getElementById('container');
-  sideScroll(container, 'right', 25, 270, 10);
-}
-// desktop
 
-ClickLeft1() {
-  var container = document.getElementById('container1');
-  sideScroll(container, 'left', 25, 270, 10);
-}
-ClickRight1() {
-  var container = document.getElementById('container1');
-  sideScroll(container, 'right', 25, 270, 10);
-}
+  AddToCart(id: any) {
+    this.cartService.AddToCart(id).subscribe({
+      next(value) {
+        console.log('added to cart item' + value);
+      },
 
-// notebook
-ClickLeft2() {
-  var container = document.getElementById('container2');
-  sideScroll(container, 'left', 25, 270, 10);
-}
-ClickRight2() {
-  var container = document.getElementById('container2');
-  sideScroll(container, 'right', 25, 270, 10);
-}
+      error(err) {
+        console.log(err);
+      },
+    });
+  }
 
-// storage
-ClickLeft3() {
-  var container = document.getElementById('container3');
-  sideScroll(container, 'left', 25, 270, 10);
-}
-ClickRight3() {
-  var container = document.getElementById('container3');
-  sideScroll(container, 'right', 25, 270, 10);
-}
-// monitor
-ClickLeft4() {
-  var container = document.getElementById('container4');
-  sideScroll(container, 'left', 25, 270, 10);
-}
-ClickRight4() {
-  var container = document.getElementById('container4');
-  sideScroll(container, 'right', 25, 270, 10);
-}
-}
+  // category
+  ClickLeft() {
+    var container = document.getElementById('container');
+    sideScroll(container, 'left', 25, 270, 10);
+  }
+  ClickRight() {
+    var container = document.getElementById('container');
+    sideScroll(container, 'right', 25, 270, 10);
+  }
+  // desktop
 
+  ClickLeft1() {
+    var container = document.getElementById('container1');
+    sideScroll(container, 'left', 25, 270, 10);
+  }
+  ClickRight1() {
+    var container = document.getElementById('container1');
+    sideScroll(container, 'right', 25, 270, 10);
+  }
 
+  // notebook
+  ClickLeft2() {
+    var container = document.getElementById('container2');
+    sideScroll(container, 'left', 25, 270, 10);
+  }
+  ClickRight2() {
+    var container = document.getElementById('container2');
+    sideScroll(container, 'right', 25, 270, 10);
+  }
+
+  // storage
+  ClickLeft3() {
+    var container = document.getElementById('container3');
+    sideScroll(container, 'left', 25, 270, 10);
+  }
+  ClickRight3() {
+    var container = document.getElementById('container3');
+    sideScroll(container, 'right', 25, 270, 10);
+  }
+  // monitor
+  ClickLeft4() {
+    var container = document.getElementById('container4');
+    sideScroll(container, 'left', 25, 270, 10);
+  }
+  ClickRight4() {
+    var container = document.getElementById('container4');
+    sideScroll(container, 'right', 25, 270, 10);
+  }
+}
 
 function sideScroll(
   element: any,
