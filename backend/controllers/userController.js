@@ -116,6 +116,30 @@ const getAllProductInCart = async (req, res) => {
   }
 };
 
+const getAllProductInCartByEmail = async (req, res) => {
+  try {
+    const carts = await User.findOne({ email: req.params.userEmail }).select(
+      'cart'
+    );
+    console.log(carts);
+    let productItems = [];
+    let total = 0;
+
+    for (const product of carts.cart) {
+      const dbProduct = await Product.findById({ _id: product });
+      if (!dbProduct) {
+        return res.status(404).json({ msg: 'product not found' });
+      }
+      productItems.push(dbProduct);
+      total += dbProduct.price;
+    }
+
+    res.status(200).json({ total, productItems });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
 const deleteProductFromCart = async (req, res) => {
   try {
     const removeProduct = await User.updateOne(
@@ -136,6 +160,7 @@ module.exports = {
   updateUser,
   deleteUser,
   addProductToCart,
+  getAllProductInCartByEmail,
   getAllProductInCart,
   deleteProductFromCart,
 };
