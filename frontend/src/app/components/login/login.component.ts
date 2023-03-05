@@ -45,9 +45,7 @@ export class LoginComponent {
         this.userFromDB = data;
         if (this.userFromDB) {
           localStorage.setItem('user', email);
-
-          this.router.navigate(['/']);
-          location.reload();
+          window.location.href = '/';
         }
       },
 

@@ -19,7 +19,6 @@ export class HeadersOfPagesComponent implements OnInit {
       next(value) {
         localStorage.removeItem('user');
         window.location.href = '/';
-        location.reload();
       },
     });
   }
