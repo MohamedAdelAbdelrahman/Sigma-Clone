@@ -71,10 +71,15 @@ const deleteUser = async (req, res) => {
   }
 };
 
-//*create cart
 const addProductToCart = async (req, res) => {
   try {
-    const userData = await User.findOne({ _id: req.user.userId });
+    let userData;
+    if (req.body.userEmail) {
+      userData = await User.findOne({ email: req.body.userEmail });
+    } else {
+      userData = await User.findOne({ _id: req.user.userId });
+    }
+
     const productIndex = userData.cart.indexOf(req.body.productId);
     if (productIndex !== -1) {
       return res.status(200).send();
