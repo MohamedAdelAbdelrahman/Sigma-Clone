@@ -47,6 +47,7 @@ export class LoginComponent {
           localStorage.setItem('user', email);
 
           this.router.navigate(['/']);
+          location.reload();
         }
       },
 
