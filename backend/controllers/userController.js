@@ -71,25 +71,32 @@ const deleteUser = async (req, res) => {
   }
 };
 
-const addProductToCart = async (req, res) => {
+const addProductToCartByEmail = async (req, res) => {
+  console.log(req.params.userEmail);
   try {
     let userData;
-    if (req.body.userEmail) {
-      userData = await User.findOne({ email: req.body.userEmail });
+    if (req.params.userEmail) {
+      userData = await User.findOne({ email: req.params.userEmail });
     } else {
       userData = await User.findOne({ _id: req.user.userId });
     }
-
+    let updateUserCart;
+    if (!userData.cart.length) {
+      updateUserCart = await User.updateOne(
+        { email: req.params.userEmail },
+        { $push: { cart: req.body.productId } }
+      );
+      return res.status(201).json({ updateUserCart });
+    }
     const productIndex = userData.cart.indexOf(req.body.productId);
     if (productIndex !== -1) {
-      return res.status(200).send();
+      updateUserCart = await User.updateOne(
+        { email: req.body.email },
+        { $push: { cart: req.body.productId } }
+      );
+      res.status(201).json({ updateUserCart });
     }
-
-    const product = await User.updateOne(
-      { _id: req.user.userId },
-      { $push: { cart: req.body.productId } }
-    );
-    res.status(201).json({ product });
+    return res.status(200).send();
   } catch (error) {
     res.status(500).json({ msg: error });
   }
@@ -134,7 +141,7 @@ const getAllProductInCartByEmail = async (req, res) => {
       total += dbProduct.price;
     }
 
-    res.status(200).json({ total, productItems });
+    res.status(200).json({ total, count: carts.cart.length, productItems });
   } catch (error) {
     res.status(500).json({ msg: error });
   }
@@ -152,6 +159,18 @@ const deleteProductFromCart = async (req, res) => {
   }
 };
 
+const deleteProductFromCartByEmail = async (req, res) => {
+  try {
+    const removeProduct = await User.updateOne(
+      { email: req.params.userEmail },
+      { $pull: { cart: req.body.productId } }
+    );
+    res.status(201).json({ removeProduct });
+  } catch (error) {
+    res.status(500).json({ msg: error });
+  }
+};
+
 module.exports = {
   showCurrentUser,
   getAllUsers,
@@ -159,8 +178,9 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
-  addProductToCart,
+  addProductToCartByEmail,
   getAllProductInCartByEmail,
   getAllProductInCart,
   deleteProductFromCart,
+  deleteProductFromCartByEmail,
 };
