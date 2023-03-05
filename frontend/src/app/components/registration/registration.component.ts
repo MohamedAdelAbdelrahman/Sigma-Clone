@@ -51,10 +51,9 @@ export class RegistrationComponent {
     let user = { email, name, password };
     this.accountService.RegisterUser(user).subscribe({
       next: (value) => {
-        console.log(value);
         this.newUser = value;
         if (this.newUser) {
-          localStorage.setItem('user', name);
+          localStorage.setItem('userEmail', email);
           window.location.href = '/';
         }
       },

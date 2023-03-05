@@ -17,7 +17,7 @@ export class HeadersOfPagesComponent implements OnInit {
   Logout() {
     this.accountService.LogoutUser().subscribe({
       next(value) {
-        localStorage.removeItem('user');
+        localStorage.removeItem('userEmail');
         window.location.href = '/';
       },
     });
