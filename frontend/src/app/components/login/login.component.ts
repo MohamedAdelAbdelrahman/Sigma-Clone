@@ -41,10 +41,9 @@ export class LoginComponent {
     let user = { email, password };
     this.accountService.LoginUser(user).subscribe({
       next: (data) => {
-        // console.log(data);
         this.userFromDB = data;
         if (this.userFromDB) {
-          localStorage.setItem('user', email);
+          localStorage.setItem('userEmail', email);
           window.location.href = '/';
         }
       },
