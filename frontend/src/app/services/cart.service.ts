@@ -1,16 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CartService {
+export class CartService implements OnInit {
   constructor(private http: HttpClient) {}
-
   private base_url = 'http://localhost:3000/api/v1/users/cart/';
-
+  ngOnInit(): void {}
   AddToCart(itemID: any) {
-    return this.http.post(this.base_url, itemID);
+    let userEmail = localStorage.getItem('userEmail');
+
+    const reqBody = {
+      productId: itemID,
+    };
+
+    return this.http.post(this.base_url + userEmail + '/add', reqBody);
   }
 
   GetAllCartItems() {
@@ -22,6 +27,16 @@ export class CartService {
   }
 
   DeleteCartItem(id: any) {
-    return this.http.delete(this.base_url + id);
+    let userEmail = localStorage.getItem('userEmail');
+
+    const reqBody = {
+      productId: id,
+    };
+
+    return this.http.post(this.base_url + userEmail, reqBody);
+  }
+
+  getCartProducts(email: any) {
+    return this.http.get(this.base_url + email);
   }
 }
