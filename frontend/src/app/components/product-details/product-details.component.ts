@@ -31,6 +31,7 @@ export class ProductDetailsComponent implements OnInit {
     });
   }
   AddToCart(id: any) {
+    alert('added');
     this.cartService.AddToCart(id).subscribe({
       next(value) {
         console.log('added to cart item' + value);
@@ -42,5 +43,4 @@ export class ProductDetailsComponent implements OnInit {
       },
     });
   }
-
 }

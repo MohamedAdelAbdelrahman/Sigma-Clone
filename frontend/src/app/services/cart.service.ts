@@ -9,8 +9,9 @@ export class CartService {
 
   private base_url = 'http://localhost:3000/api/v1/users/cart/';
 
-  AddToCart(itemID: any) {
-    return this.http.post(this.base_url, itemID);
+  AddToCart(productId: any) {
+    return this.http.post(this.base_url, productId);
+    
   }
 
   GetAllCartItems() {
