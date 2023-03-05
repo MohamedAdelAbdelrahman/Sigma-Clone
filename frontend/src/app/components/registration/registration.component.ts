@@ -55,8 +55,7 @@ export class RegistrationComponent {
         this.newUser = value;
         if (this.newUser) {
           localStorage.setItem('user', name);
-          this.router.navigate(['/']);
-          location.reload();
+          window.location.href = '/';
         }
       },
 
