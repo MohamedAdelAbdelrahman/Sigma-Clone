@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <!-- ****************************Carousel****************************** -->
   <div class="row pt-2">
-    <div class="Slider col-lg-7">
+    <div class="Slider col-lg-7" >
       <div id="slider">
         <figure>
           <img src="assets/images/Carousel2.PNG" />
@@ -11,7 +11,7 @@
       </div>
     </div>
 
-    <div class="col-lg-5 Pics4">
+    <div class="col-lg-5 Pics4" style="height: 58%;">
       <div class="row">
         <div class="col-lg-6">
           <div class="container1">
@@ -46,18 +46,14 @@
     <div class="horizontal_slider" id="container">
       <div class="slider_container">
         <div class="item hovereffect" *ngIf="products">
-          <a
-            routerLink="/home/{{ products.products[0]._id }}"
-            class="itemImage text-white"
-          >
+          <div class="itemImage text-white">
             <img
-              src="assets{{ products.products[0].image }}"
+              src="assets/images/desktop.jpeg"
               alt=""
               class="card-img"
             />
-          </a>
-          <p class="parag">{{ products.products[0].name }}</p>
-          <p class="parag"></p>
+            </div>
+          <p class="parag">Desktop</p>
         </div>
         <div class="item hovereffect">
           <div class="itemImage text-white">
@@ -136,12 +132,13 @@
     <hr />
     <div class="horizontal_slider container11" id="container1">
       <section class="slider_container" *ngIf="products.products">
-        <article
+        <a
+        routerLink="/home/{{ product._id }}"
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
-          <a
-            routerLink="/home/{{ product._id }}"
+          <div
+          class="item-container"
             *ngIf="product['category'] === 'Desktop'"
           >
             <div class="itemImage card bg-dark text-white">
@@ -158,8 +155,8 @@
               </button>
               <p class="parag">{{ product.name }}</p>
             </div>
-          </a>
-        </article>
+        </div>
+        </a>
       </section>
     </div>
   </div>
@@ -270,12 +267,13 @@
     <hr />
     <div class="horizontal_slider container11" id="container3">
       <section class="slider_container" *ngIf="products.products">
-        <article
+        <a
+        routerLink="/home/{{ product._id }}"
+
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
-          <a
-            routerLink="/home/{{ product._id }}"
+          <div
             *ngIf="product['category'] === 'Storage'"
             class="item-container"
           >
@@ -293,8 +291,8 @@
               </button>
               <p class="parag">{{ product.name }}</p>
             </div>
-          </a>
-        </article>
+        </div>
+        </a>
       </section>
     </div>
   </div>
@@ -324,12 +322,12 @@
     <hr />
     <div class="horizontal_slider container11" id="container4">
       <section class="slider_container" *ngIf="products.products">
-        <article
+        <a
+        routerLink="/home/{{ product._id }}"
           class="item hovereffect"
           *ngFor="let product of products.products"
         >
-          <a
-            routerLink="/home/{{ product._id }}"
+          <div
             *ngIf="product['category'] === 'Monitor'"
             class="item-container"
           >
@@ -347,8 +345,8 @@
               </button>
               <p class="parag">{{ product.name }}</p>
             </div>
-          </a>
-        </article>
+        </div>
+        </a>
       </section>
     </div>
   </div>
@@ -379,12 +377,13 @@
   <hr />
   <div class="horizontal_slider container11" id="container3">
     <section class="slider_container" *ngIf="products.products">
-      <article
+      <a
+      routerLink="/home/{{ product._id }}"
+
         class="item hovereffect"
         *ngFor="let product of products.products"
       >
-        <a
-          routerLink="/home/{{ product._id }}"
+        <div
           *ngIf="product['category'] === 'Accessories'"
           class="item-container"
         >
@@ -402,8 +401,8 @@
             </button>
             <p class="parag">{{ product.name }}</p>
           </div>
-        </a>
-      </article>
+        </div>
+      </a>
     </section>
   </div>
 </div>
@@ -433,12 +432,13 @@
   <hr />
   <div class="horizontal_slider container11" id="container3">
     <section class="slider_container" *ngIf="products.products">
-      <article
+      <a
+      routerLink="/home/{{ product._id }}"
+
         class="item hovereffect"
         *ngFor="let product of products.products"
       >
-        <a
-          routerLink="/home/{{ product._id }}"
+        <div
           *ngIf="product['category'] === 'Network'"
           class="item-container"
         >
@@ -456,8 +456,8 @@
             </button>
             <p class="parag">{{ product.name }}</p>
           </div>
-        </a>
-      </article>
+        </div>
+      </a>
     </section>
   </div>
 </div>

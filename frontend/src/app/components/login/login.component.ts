@@ -41,19 +41,10 @@ export class LoginComponent {
     let user = { email, password };
     this.accountService.LoginUser(user).subscribe({
       next: (data) => {
-        console.log(data);
+        // console.log(data);
         this.userFromDB = data;
         if (this.userFromDB) {
-          this.userLoggedIn = data;
-          console.log('logged in user ' + this.userLoggedIn.name);
-          // this.accountService.showLoggedUser().subscribe({
-          //   next: (value) => {
-          //   },
-
-          //   error(err) {
-          //     console.log(err);
-          //   },
-          // });
+          localStorage.setItem('user', email);
 
           this.router.navigate(['/']);
         }
