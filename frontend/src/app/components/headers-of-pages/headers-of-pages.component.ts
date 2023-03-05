@@ -11,7 +11,7 @@ export class HeadersOfPagesComponent implements OnInit {
   loggedUser: any;
 
   ngOnInit() {
-    this.loggedUser = this.readLocalStorageValue('user');
+    this.loggedUser = this.readLocalStorageValue('userEmail');
   }
 
   Logout() {
