@@ -11,6 +11,7 @@ const {
   deleteUser,
   addProductToCart,
   getAllProductInCart,
+  getAllProductInCartByEmail,
   deleteProductFromCart,
 } = require('../controllers/userController');
 
@@ -26,6 +27,8 @@ router
   .get(getAllProductInCart)
   .post(addProductToCart)
   .delete(deleteProductFromCart);
+router.route('/cart/:userEmail').get(getAllProductInCartByEmail);
+
 router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 module.exports = router;
