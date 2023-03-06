@@ -32,8 +32,6 @@ router
 
 router.route('/cart/:userEmail/add').post(addProductToCartByEmail);
 
-router.route('/cart/:userEmail/add');
-
 router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
 module.exports = router;

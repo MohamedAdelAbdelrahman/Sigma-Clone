@@ -72,7 +72,6 @@ const deleteUser = async (req, res) => {
 };
 
 const addProductToCartByEmail = async (req, res) => {
-  console.log(req.params.userEmail);
   try {
     let userData;
     if (req.params.userEmail) {
@@ -80,23 +79,17 @@ const addProductToCartByEmail = async (req, res) => {
     } else {
       userData = await User.findOne({ _id: req.user.userId });
     }
-    let updateUserCart;
-    if (!userData.cart.length) {
-      updateUserCart = await User.updateOne(
-        { email: req.params.userEmail },
-        { $push: { cart: req.body.productId } }
-      );
-      return res.status(201).json({ updateUserCart });
-    }
     const productIndex = userData.cart.indexOf(req.body.productId);
+
     if (productIndex !== -1) {
-      updateUserCart = await User.updateOne(
-        { email: req.body.email },
-        { $push: { cart: req.body.productId } }
-      );
-      res.status(201).json({ updateUserCart });
+      return res.status(200).send();
     }
-    return res.status(200).send();
+
+    const updateUserCart = await User.updateOne(
+      { email: req.params.userEmail },
+      { $push: { cart: req.body.productId } }
+    );
+    res.status(201).json({ updateUserCart });
   } catch (error) {
     res.status(500).json({ msg: error });
   }
@@ -128,7 +121,6 @@ const getAllProductInCartByEmail = async (req, res) => {
     const carts = await User.findOne({ email: req.params.userEmail }).select(
       'cart'
     );
-    console.log(carts);
     let productItems = [];
     let total = 0;
 
