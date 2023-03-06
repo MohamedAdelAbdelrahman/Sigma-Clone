@@ -6,37 +6,33 @@ import { Injectable, OnInit } from '@angular/core';
 })
 export class CartService implements OnInit {
   constructor(private http: HttpClient) {}
-  private base_url = 'http://localhost:3000/api/v1/users/cart/';
+  // private base_url = 'http://localhost:3000/api/v1/users/';
   ngOnInit(): void {}
-  AddToCart(itemID: any) {
+
+  AddToCart(productId: any) {
     let userEmail = localStorage.getItem('userEmail');
-
-    const reqBody = {
-      productId: itemID,
-    };
-
-    return this.http.post(this.base_url + userEmail + '/add', reqBody);
+    let base_url = `http://localhost:3000/api/v1/users/${userEmail}/cart/`;
+    return this.http.post(base_url, { productId });
   }
 
-  GetAllCartItems() {
-    return this.http.get(this.base_url);
-  }
+  // GetAllCartItems() {
+  //   let userEmail = localStorage.getItem('userEmail');
+  //   let base_url = `http://localhost:3000/api/v1/users/${userEmail}/cart/`;
+  //   return this.http.get(base_url);
+  // }
 
-  UpdateCartItem(id: any, item: any) {
-    return this.http.put(this.base_url + id, item);
-  }
+  // UpdateCartItem(id: any, item: any) {
+  //   return this.http.put(this.base_url + id, item);
+  // }
 
-  DeleteCartItem(id: any) {
+  DeleteCartItem(productId: any) {
     let userEmail = localStorage.getItem('userEmail');
-
-    const reqBody = {
-      productId: id,
-    };
-
-    return this.http.post(this.base_url + userEmail, reqBody);
+    let base_url = `http://localhost:3000/api/v1/users/${userEmail}/cart/${productId}`;
+    return this.http.delete(base_url);
   }
 
   getCartProducts(email: any) {
-    return this.http.get(this.base_url + email);
+    let base_url = `http://localhost:3000/api/v1/users/${email}/cart/`;
+    return this.http.get(base_url);
   }
 }

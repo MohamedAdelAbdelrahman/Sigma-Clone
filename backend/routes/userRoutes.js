@@ -12,7 +12,6 @@ const {
   addProductToCartByEmail,
   getAllProductInCart,
   getAllProductInCartByEmail,
-  deleteProductFromCart,
   deleteProductFromCartByEmail,
 } = require('../controllers/userController');
 
@@ -23,14 +22,14 @@ router
 
 router.route('/showMe').get(showCurrentUser);
 
-router.route('/cart').get(getAllProductInCart).delete(deleteProductFromCart);
-// .post(addProductToCart)
 router
-  .route('/cart/:userEmail')
+  .route('/:userEmail/cart')
   .get(getAllProductInCartByEmail)
-  .post(deleteProductFromCartByEmail);
+  .post(addProductToCartByEmail);
 
-router.route('/cart/:userEmail/add').post(addProductToCartByEmail);
+router
+  .route('/:userEmail/cart/:productId')
+  .delete(deleteProductFromCartByEmail);
 
 router.route('/:id').get(getUser).patch(updateUser).delete(deleteUser);
 
