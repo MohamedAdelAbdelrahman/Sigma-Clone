@@ -71,8 +71,28 @@ const deleteUser = async (req, res) => {
   }
 };
 
+// const getAllProductInCart = async (req, res) => {
+//   try {
+//     const carts = await User.findById({ _id: req.user.userId }).select('cart');
+//     let productItems = [];
+//     let total = 0;
+
+//     for (const product of carts.cart) {
+//       const dbProduct = await Product.findById({ _id: product });
+//       if (!dbProduct) {
+//         return res.status(404).json({ msg: 'product not found' });
+//       }
+//       productItems.push(dbProduct);
+//       total += dbProduct.price;
+//     }
+
+//     res.status(200).json({ total, productItems });
+//   } catch (error) {
+//     res.status(500).json({ msg: error });
+//   }
+// };
+
 const addProductToCartByEmail = async (req, res) => {
-  console.log(req.params.userEmail);
   try {
     let userData;
     if (req.params.userEmail) {
@@ -80,44 +100,17 @@ const addProductToCartByEmail = async (req, res) => {
     } else {
       userData = await User.findOne({ _id: req.user.userId });
     }
-    let updateUserCart;
-    if (!userData.cart.length) {
-      updateUserCart = await User.updateOne(
-        { email: req.params.userEmail },
-        { $push: { cart: req.body.productId } }
-      );
-      return res.status(201).json({ updateUserCart });
-    }
     const productIndex = userData.cart.indexOf(req.body.productId);
+
     if (productIndex !== -1) {
-      updateUserCart = await User.updateOne(
-        { email: req.body.email },
-        { $push: { cart: req.body.productId } }
-      );
-      res.status(201).json({ updateUserCart });
-    }
-    return res.status(200).send();
-  } catch (error) {
-    res.status(500).json({ msg: error });
-  }
-};
-
-const getAllProductInCart = async (req, res) => {
-  try {
-    const carts = await User.findById({ _id: req.user.userId }).select('cart');
-    let productItems = [];
-    let total = 0;
-
-    for (const product of carts.cart) {
-      const dbProduct = await Product.findById({ _id: product });
-      if (!dbProduct) {
-        return res.status(404).json({ msg: 'product not found' });
-      }
-      productItems.push(dbProduct);
-      total += dbProduct.price;
+      return res.status(200).send();
     }
 
-    res.status(200).json({ total, productItems });
+    const updateUserCart = await User.updateOne(
+      { email: req.params.userEmail },
+      { $push: { cart: req.body.productId } }
+    );
+    res.status(201).json({ updateUserCart });
   } catch (error) {
     res.status(500).json({ msg: error });
   }
@@ -128,7 +121,6 @@ const getAllProductInCartByEmail = async (req, res) => {
     const carts = await User.findOne({ email: req.params.userEmail }).select(
       'cart'
     );
-    console.log(carts);
     let productItems = [];
     let total = 0;
 
@@ -147,23 +139,11 @@ const getAllProductInCartByEmail = async (req, res) => {
   }
 };
 
-const deleteProductFromCart = async (req, res) => {
-  try {
-    const removeProduct = await User.updateOne(
-      { _id: req.user.userId },
-      { $pull: { cart: req.body.productId } }
-    );
-    res.status(201).json({ removeProduct });
-  } catch (error) {
-    res.status(500).json({ msg: error });
-  }
-};
-
 const deleteProductFromCartByEmail = async (req, res) => {
   try {
     const removeProduct = await User.updateOne(
       { email: req.params.userEmail },
-      { $pull: { cart: req.body.productId } }
+      { $pull: { cart: req.params.productId } }
     );
     res.status(201).json({ removeProduct });
   } catch (error) {
@@ -180,7 +160,5 @@ module.exports = {
   deleteUser,
   addProductToCartByEmail,
   getAllProductInCartByEmail,
-  getAllProductInCart,
-  deleteProductFromCart,
   deleteProductFromCartByEmail,
 };
