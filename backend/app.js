@@ -16,7 +16,7 @@ const userRouter = require('./routes/userRoutes');
 const notFound = require('./middleware/notFound');
 const connectDB = require('./db/connection');
 const errorHandler = require('./middleware/errorHandler');
-const { authenticateUser } = require('./middleware/authentication');
+// const { authenticateUser } = require('./middleware/authentication');
 
 const app = express();
 const fileUpload = require('express-fileupload');
