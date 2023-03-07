@@ -45,13 +45,13 @@ app.use(fileUpload());
 
 // routes
 app.get('/', (req, res) => {
-  console.log(req.signedCookies);
+  // console.log(req.signedCookies);
   res.send('SIGMA API');
 });
 
 app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/users', userRouter);
 // app.use('/api/v1/users', authenticateUser, userRouter);
+app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 
 app.use(notFound);
