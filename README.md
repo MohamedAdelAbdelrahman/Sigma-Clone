@@ -116,7 +116,7 @@ forget link in Login Form .<br><br>
  <br><br>
 
 
-### Buying Scenario:
+### Buying Method:
 -   When User click on the product selected in Home page Will be taken to the product page to see  more detailed information about the product .
 -  In product page he can see more images about the product he selected which are displayed using image slider .
 -  After user reading the price and all descriptions sorted to him then ,he can press on "Add To Cart" Button.
@@ -164,13 +164,16 @@ forget link in Login Form .<br><br>
 
 <br><br>
 
+
 ### The Registeration page of Sigma website
 ![8](https://user-images.githubusercontent.com/118286630/223586131-89d15e7a-5f9e-4b69-9e08-276595a2d884.jpeg)
 
 <br><br>
 
+
 ### The Categories page of Sigma website
-![3](https://user-images.githubusercontent.com/118286630/223586306-7ae23c4a-ed2e-4d51-b81c-e3b231a1e5bb.png)
+![3](https://user-images.githubusercontent.com/118286630/223588115-a5e3a69b-9564-4fb0-8746-610af162174e.jpeg)
+
 
 <br><br>
 
@@ -184,10 +187,12 @@ forget link in Login Form .<br><br>
 
 <br><br>
 
+
 ### The Shopping Cart page of Sigma website
 ![2](https://user-images.githubusercontent.com/118286630/223585677-74d30d5d-7db3-4b86-8be4-f0276e64c91b.jpeg)
 
 <br><br>
+
 
 ### The Checkout page of Sigma website
 ![4](https://user-images.githubusercontent.com/118286630/223586664-dcff4507-1c9c-444d-a71b-42f231f21c31.jpeg)
