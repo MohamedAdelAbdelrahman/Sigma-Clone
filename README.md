@@ -11,13 +11,18 @@
 - CSS3
 - HTML5 
 
+### Backend-End Development Languages
+- NodeJs
+- Express.JS
+- MongoDB
+
 ### Front-End Development Skills
 - Git 
 - Bootstrap 
 <br><br>
 
 ### N.B: The work is done with the following technologies
-- Backend: NodeJS - Express.JS
+- Backend: NodeJS - Express.JS - MongoDB
 - Frontend: Html5 - Css3 - TypeScript - Bootstrap - Angular
 
 At the end of the project we managed to achieve a great success with a well-made platform while respecting the specifications and making our client very satisfied with the result.
